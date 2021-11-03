@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        json
+
+        <script>
+
+            //JavaScript to JSON
+
+            var myJSObj = { name: "Cassy", age: 22, city: "Cape Town" };   
+            var myJSON = JSON.stringify(myJSObj);
+            
+            console.log('JSON');
+            console.log(myJSON);
+
+            //JSON to Javascript
+
+            var myJSON = '{ "name":"Cassy", "age":22, "city":"Cape Town" }';
+            var myJSObj = JSON.parse(myJSON); 
+
+            console.log('JavaScript');
+            console.log(myJSObj);
+        
+            //Accessing Attributes #1:
+
+            let JSONData = '{ ' + 
+                            '"firstNameLead":"Joanna" ,' + 
+                            '"lastNameLead":"Summers" ,' +
+                            '"firstNameCo":"Patsy" ,' + 
+                            '"lastNameCo":"Stone"' +  
+                            '}';
+
+            let obj = JSON.parse(JSONData);
+
+            console.log(obj.firstNameLead + " " + obj.lastNameLead); // Joanna Summers
+
+            //Accessing Attributes #2:
+
+            let JSONData2 = {
+                "string" : "Lyndon",
+                "number" : 7,
+                "object" : {"age" : 10, "height" : "tall"},
+                "array" : ["avocado", "banana", "melon"],
+                "boolean" : true,
+                "null" : null
+            }
+
+            
+            console.log(JSONData2.array[0]); //"avocado"
+            console.log(JSONData2.object["height"]); //"tall"
+
+        </script>
+    
+    </body>
+</html>

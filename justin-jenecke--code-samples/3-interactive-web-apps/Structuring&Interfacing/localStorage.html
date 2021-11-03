@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    local storage
+
+    <script>
+
+        //Eg #2:
+
+        obj = {name: "Lyndon", age: 42, address: {suburb : "South", city : "Cape Town", code : 8001}};
+        myData = JSON.stringify(obj);
+        
+        localStorage.setItem("userData", myData);
+
+        myText = localStorage.getItem("userData");
+        newObj = JSON.parse(myText);
+        console.log(newObj.address);
+
+
+        
+
+    </script>
+</body>
+</html>

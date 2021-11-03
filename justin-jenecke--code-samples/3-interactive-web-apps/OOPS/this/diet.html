@@ -16,7 +16,7 @@
             
             dietType: 'vegetarian',
             diet() {
-            console.log(dietType);//should be console.log(this.dietType);
+            console.log(this.dietType);//should be console.log(this.dietType);
             }
         };
         
@@ -27,14 +27,14 @@
 
         //Arrow functions dont have their own this keyword
 
-        let myObj = {
+        /*let myObj = {
             x : 10,
             getX : ()=>console.log(this.x)
         //  getX : function() {console.log(this.x)} - regular function will work
         }
         
         myObj.x //10
-        myObj.getX() //undefined
+        myObj.getX() //undefined*/
 
     </script>
 </body>
