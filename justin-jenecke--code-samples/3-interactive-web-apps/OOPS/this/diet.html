@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet</title>
+</head>
+<body>
+
+    Diet.html
+
+    <script>
+        
+        const me = {
+            
+            dietType: 'vegetarian',
+            diet() {
+            console.log(dietType);//should be console.log(this.dietType);
+            }
+        };
+        
+        me.diet(); // "ReferenceError: dietType is not defined"
+    
+
+    /*-------------------------------------*/
+
+        //Arrow functions dont have their own this keyword
+
+        let myObj = {
+            x : 10,
+            getX : ()=>console.log(this.x)
+        //  getX : function() {console.log(this.x)} - regular function will work
+        }
+        
+        myObj.x //10
+        myObj.getX() //undefined
+
+    </script>
+</body>
+</html>
