@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //Similar to Composition
+        //Injecting function to serve as constructor of other object 
+
+        //call method:
+        function Person(name, surname) {
+            this.name = name;
+            this.surname = surname;
+        }
+        
+        function GoodGuy(name, surname) {
+            Person.call(this, name, surname);
+            this.category = 'Goody';
+        }
+        
+        function BadGuy(name, surname) {
+            Person.call(this, name, surname);
+            this.category = 'Baddy';
+        }
+        
+        const superman = new GoodGuy('Clark', 'Kent');
+        const drOctopus = new BadGuy('Otto', 'Octavius');
+      
+    /*-----------------------------------------*/
+
+        //Apply method:
+        function Person(name, surname) {
+            this.name = name;
+            this.surname = surname;
+        }
+
+        function BadGuy(...args) {
+            Person.apply(this, args.sort());
+            this.category = 'Baddy';
+        }
+
+        const drOctopus = new BadGuy('Otto', 'Octavius');
+
+            console.log(drOctopus.name); // 'Octavius'
+            console.log(drOctopus.surname); // 'Otto'
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    
+    <div>
+        <header>Todo list</header>
+
+        <div id="todoBody">
+            
+        </div>
+
+        <form id="form">
+            <input class="form" onfocus="this.value =''"  id="car_manufacturer">
+            <input class="form" onfocus="this.value =''" id="car_model">
+            <input class="form" onfocus="this.value =''" id="car_year">
+            <input class="form" onfocus="this.value =''" id="car_cost">
+            <button id="create" type="button">Create</button>
+        </form>
+
+    </div>
+
+    <div class="elem">uygi</div>
+
+    <script>
+    const element = document.querySelector('.elem');
+    let myFunc = function(){
+        console.log(this);
+        };
+    element.addEventListener('click', myFunc, false);
+    </script>
+
+    <script src="./object.js"></script>
+</body>
+</html>

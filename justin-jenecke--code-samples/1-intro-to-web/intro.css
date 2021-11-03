@@ -1,0 +1,18 @@
+/**/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* CSS */
+body {
+    background-color: bisque;
+}
+
+body {
+    background-color: dodgerblue;
+}
+
+/* Box Model */
