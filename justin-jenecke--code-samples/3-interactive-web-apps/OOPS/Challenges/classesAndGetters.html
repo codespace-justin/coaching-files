@@ -31,14 +31,17 @@
 
         <script>
 
-            //const submit = document.getElementById('submit');
-
+            //Class as blueprint for instantiating Tasks
             class Tasks {
+
                 constructor(task) {
                     this._task = task;
                 } 
+
+                //Getter
                 get getTask() { return this._task; }
 
+                //Setter
                 set setTask (task) {
                     if (typeof task === 'string') 
                         this._task = task;
@@ -48,22 +51,22 @@
 
             }
 
-            //New task object
+            //Tasks Objects
             let myTask = new Tasks();
+            let yourTask = new Tasks();
 
-            //const allMyTasks = [];
-
+            //Function that is called once form is submitted
             function newTask(event) {
 
-                const text = document.getElementById('text');
-
                 event.preventDefault();
+
+                const text = document.getElementById('text');
                 const value = document.getElementById('task');
 
                 let newTask = new Tasks();
-
                 myTask.setTask = value.value;
 
+                //Getting tasks from my task and displaying it in the DOM
                 text.append(myTask.getTask);
                 text.innerHTML += '<br>';
                 value.value = '';
