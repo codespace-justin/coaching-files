@@ -31,8 +31,23 @@ class Car {
             console.log('Model must be a String');
     }
 
+    //Ternary operator for setter : works the same as normal if statement
     set setManufacturer(manufacturer) {
         typeof manufacturer === 'string' ? this._manufacturer = manufacturer : console.log('must be string');
+    }
+
+    set setYear(year) {
+        if (typeof year === 'number')
+            this._year = year;
+        else    
+            console.log('Year must be a number');
+    }
+
+    set setCost(cost) {
+        if (typeof cost === 'number')
+            this._cost = cost;
+        else   
+            console.log('Cost must be a number');
     }
 
 }//end of class
