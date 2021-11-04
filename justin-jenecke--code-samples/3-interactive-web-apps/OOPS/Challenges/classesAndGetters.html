@@ -20,20 +20,66 @@
 
     <body>
 
-        <form>
-            <input type="text">
+        <form onsubmit="newTask(event)">
+            <input id="task" type="text">
             <input type="submit">
         </form>
 
+        <p id="text">
+
+        </p>
+
         <script>
+
+            //const submit = document.getElementById('submit');
 
             class Tasks {
                 constructor(task) {
                     this._task = task;
+                } 
+                get getTask() { return this._task; }
+
+                set setTask (task) {
+                    if (typeof task === 'string') 
+                        this._task = task;
+                    else
+                        console.log("This shouldn't be a number");
                 }
 
             }
 
+            let myTask = new Tasks();
+
+
+            function newTask(event) {
+
+                const text = document.getElementById('text');
+
+                event.preventDefault();
+                const value = document.getElementById('task');
+                myTask.setTask = value.value;
+                
+                text.append(myTask.getTask);
+                text.innerHTML += '<br>';
+                value.value = '';
+            }
+
+            /*submit.addEventListener('click', () => {
+
+                const value = document.getElementById('value');
+                console.log(value.input)
+
+               // myTask.setTask = value.input;
+
+               // console.log(myTask.getTask);
+
+            })*/
+/*
+            if (typeof 'hu' == typeof 's')
+                console.log('this is not actually that dumb')
+            else
+                
+                console.log('this is dumb')*/
         </script>
     </body>
 </html>
