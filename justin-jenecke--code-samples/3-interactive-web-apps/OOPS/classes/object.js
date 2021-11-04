@@ -12,9 +12,28 @@ class Car {
         this._cost = cost;
     }
 
-    getModel() {
-        return this._model;
-      }
+    //Getters:
+
+    get getModel() {return this._model;}
+
+    get getManufacturer() {return this._manufacturer;}
+
+    get getYear() {return this._year;}
+    
+    get getCost() {return this._cost;}
+
+    //Setters:
+
+    set setModel(model) {
+        if (typeof model === 'string')
+            this._model = model;
+        else    
+            console.log('Model must be a String');
+    }
+
+    set setManufacturer(manufacturer) {
+        typeof manufacturer === 'string' ? this._manufacturer = manufacturer : console.log('must be string');
+    }
 
 }//end of class
 
@@ -49,11 +68,12 @@ showRoom.forEach(car => {
 
     entryPoint.innerHTML +=
 
-        `<div id="${car._model}"> 
-            <span class ="carDiv">${car._model}</span>
-            <span class ="carDiv">${car._year}</span>
-            <span class ="carDiv">${car._cost}</span>
-            <span class ="carDiv">${car.manufacturerel}</span>
+        //JavaScript template string to create HTML Element with JS variables
+        `<div id="${car.getModel}"> 
+            <span class ="carDiv">${car.getModel}</span>
+            <span class ="carDiv">${car.getYear}</span>
+            <span class ="carDiv">${car.getCost}</span>
+            <span class ="carDiv">${car.getManufacturer}</span>
             
         </div>`
 
