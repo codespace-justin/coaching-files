@@ -48,8 +48,10 @@
 
             }
 
+            //New task object
             let myTask = new Tasks();
 
+            //const allMyTasks = [];
 
             function newTask(event) {
 
@@ -57,29 +59,16 @@
 
                 event.preventDefault();
                 const value = document.getElementById('task');
+
+                let newTask = new Tasks();
+
                 myTask.setTask = value.value;
-                
+
                 text.append(myTask.getTask);
                 text.innerHTML += '<br>';
                 value.value = '';
             }
 
-            /*submit.addEventListener('click', () => {
-
-                const value = document.getElementById('value');
-                console.log(value.input)
-
-               // myTask.setTask = value.input;
-
-               // console.log(myTask.getTask);
-
-            })*/
-/*
-            if (typeof 'hu' == typeof 's')
-                console.log('this is not actually that dumb')
-            else
-                
-                console.log('this is dumb')*/
         </script>
     </body>
 </html>

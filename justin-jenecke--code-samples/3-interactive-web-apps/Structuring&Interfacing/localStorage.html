@@ -14,14 +14,43 @@
 
         //Eg #2:
 
-        obj = {name: "Lyndon", age: 42, address: {suburb : "South", city : "Cape Town", code : 8001}};
-        myData = JSON.stringify(obj);
+        obj = {name: "Lyndon", 
+                age: 42, 
+                address: 
+                    {suburb : "South", city : "Cape Town", code : 8001}
+                };
+
+        obj2 = {
+            name: 'justin',
+            age: '23',
+            likes: 'coffee'
+        };  
+        
+        obj2JSON = JSON.stringify(obj2);
+
+        
+        console.log(obj2);
+        console.log(obj2JSON);
+
+
+        sessionStorage.setItem("exampleJson", obj2JSON);
+
+        let variable = sessionStorage.getItem("exampleJson");
+
+        console.log(variable);
+
+        let convertedObj = JSON.parse(variable);
+
+        console.log(convertedObj);
+
+
+        /*myData = JSON.stringify(obj);
         
         localStorage.setItem("userData", myData);
 
         myText = localStorage.getItem("userData");
         newObj = JSON.parse(myText);
-        console.log(newObj.address);
+        console.log(newObj.address);*/
 
 
         
