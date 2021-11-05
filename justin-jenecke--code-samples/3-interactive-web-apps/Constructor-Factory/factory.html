@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory</title>
+</head>
+<body>
+    Factory
+    
+
+    <button onclick="robot();" > Beep Boop </button>
+
+    <div id="xyz">
+        Text must go here: 
+    </div>
+
+    <script>
+        
+        //Factory function
+        function User(firstname, lastname, username, email) {
+            this._firstname = firstname;
+            this._lastname = lastname;
+            this._username = username;
+            this._email = email;
+            //return this; is implicit with Constructor Functions
+
+        }
+
+        var jimDoe = new User("Jim", "Doe", "jimmyBoy", "jim@google.com");
+        var timReece = new User("Tim", "Reece", "superTim", "tim@yahoo.com");
+
+        //Factory function
+        const UserFactory = (firstname, lastname, username, email) => {
+/*
+            const firstName = firstname;
+            const lastName = lastname;
+            const userName = username;
+            const emailAddress = email;
+*/
+            return {
+                firstName : firstname,
+                lastName : lastname,
+                userName : username,
+                emailAddress : email,
+                fullname() {
+                    console.log(firstName + lastName + userName + emailAddress);
+                }
+            }
+        }
+
+        const bobStone = UserFactory('Bob','Stone','theRock777', 'rocky@yahoo.com');
+
+
+        console.log(bobStone.lastName);
+
+        function robot() {
+            document.getElementById('xyz').innerText += `${bobStone.userName}`;
+        }
+
+    </script>
+</body>
+</html>
