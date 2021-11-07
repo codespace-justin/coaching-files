@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Chain</title>
+</head>
+<body>
+    Prototype Chain
+
+    <script>
+        let myFunc = function () {
+            this.x = 0;
+            this.y = 1;
+        }
+    
+        let objConFun = new myFunc();
+
+        myFunc.prototype.y = 2;
+        myFunc.prototype.z = 3;
+
+        console.log(objConFun.x); // 0
+
+        console.log(objConFun.y); // 1
+
+        console.log(objConFun.z); // 3
+
+        console.log(objConFun.a); // undefined
+        
+    </script>
+</body>
+</html>

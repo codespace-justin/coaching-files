@@ -18,7 +18,7 @@
 
     <script>
         
-        //Factory function
+        //Constructor function
         function User(firstname, lastname, username, email) {
             this._firstname = firstname;
             this._lastname = lastname;
@@ -28,17 +28,9 @@
 
         }
 
-        var jimDoe = new User("Jim", "Doe", "jimmyBoy", "jim@google.com");
-        var timReece = new User("Tim", "Reece", "superTim", "tim@yahoo.com");
-
         //Factory function
         const UserFactory = (firstname, lastname, username, email) => {
-/*
-            const firstName = firstname;
-            const lastName = lastname;
-            const userName = username;
-            const emailAddress = email;
-*/
+
             return {
                 firstName : firstname,
                 lastName : lastname,
@@ -50,14 +42,19 @@
             }
         }
 
-        const bobStone = UserFactory('Bob','Stone','theRock777', 'rocky@yahoo.com');
+        
+        var jimDoe = new User("Jim", "Doe", "jimmyBoy", "jim@google.com");
+        var timReece = new User("Tim", "Reece", "superTim", "tim@yahoo.com");
 
+        const bobStone = UserFactory('Bob','Stone','theRock777', 'rocky@yahoo.com');
 
         console.log(bobStone.lastName);
 
         function robot() {
             document.getElementById('xyz').innerText += `${bobStone.userName}`;
         }
+
+
 
     </script>
 </body>

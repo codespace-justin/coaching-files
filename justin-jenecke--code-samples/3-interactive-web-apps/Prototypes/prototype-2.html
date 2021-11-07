@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prototype 2</title>
+    </head>
+
+    <body>
+
+        Getter in Prototypes using this
+
+        <script>
+
+            function User(firstname, lastname, username, email) {
+
+                this._firstname = firstname;
+                this._lastname = lastname;
+                this._username = username;
+                this._email = email;     
+            }
+
+            var jimDoe = new User("Jim", "Doe", "jimmyBoy", "jim@google.com");
+            var timReece = new User("Tim", "Reece", "superTim", "tim@yahoo.com");
+
+            //Using prototype to create new property in class
+
+            User.prototype.database = "GiftShop"; //correct
+            console.log(jimDoe.database); // "GiftShop"
+
+            //Create prototype function to get value of propery in project
+            //this function is appended to the code in the class as a property
+            User.prototype.myFunction = function(){
+
+                return this.database;
+            }
+
+            //Prototype Setter function
+            User.prototype.mySetter = function(prop){
+
+                this.database = prop;
+            }
+
+            //Calling prototype setter
+            jimDoe.mySetter("BookShop")
+
+            //Calling prototype getter
+            console.log(jimDoe.myFunction()); //"GiftShop"
+
+
+        </script>
+        
+    </body>
+</html>

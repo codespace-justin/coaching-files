@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prototype 1</title>
+    </head>
+
+    <body>
+
+        Prototypes Main Example
+
+        <script>
+
+            function User(firstname, lastname, username, email) {
+
+                this._firstname = firstname;
+                this._lastname = lastname;
+                this._username = username;
+                this._email = email;     
+            }
+
+            var jimDoe = new User("Jim", "Doe", "jimmyBoy", "jim@google.com");
+            var timReece = new User("Tim", "Reece", "superTim", "tim@yahoo.com");
+
+            //User class/constructor has no database property the code below will fail
+
+            User.database = "GiftShop"; //failed
+            console.log(jimDoe.database); // undefined
+
+        //------------------------------------------------------------------------------
+
+            //Using prototype to create new property in class
+
+            User.prototype.database = "GiftShop"; //correct
+            console.log(jimDoe.database); // "GiftShop"
+
+            //Create new object with appended property
+            var bob = new User("Bob", "Stone", "rocky7", "rocky7@outlook", "TechShop");
+            console.log(bob.database);
+
+        </script>
+        
+    </body>
+</html>
