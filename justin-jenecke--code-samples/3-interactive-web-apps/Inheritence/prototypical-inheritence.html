@@ -12,6 +12,20 @@
     (View console for JS Code)
     
     <script>
+        
+        function F(){ //object constructor function
+            this.a = 0;
+        }
+
+        let o  = new F(); //instantiation
+
+        o.a //0 constructor
+
+        F.prototype.b = 1;
+
+        o.b // 1 a result of look up on the prototype chain
+
+        o.hasOwnProperty("b") //false 
 
     </script>
 
