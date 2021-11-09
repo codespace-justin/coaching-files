@@ -9,8 +9,27 @@
 <body>
 
     Static methods
+    <br><br>
+
+    <input type="text" id="input1">
+    <input type="text" id="input2"> 
+    <input type="text" id="input3">
+
+    <br><br>
+
+    <button id="create">Create</button>
+
+    <br><br>
+
+    <button id="refresh">refresh</button>
+
+    <div id="entry">
+
+    </div>
 
     <script>
+
+        const cars = [];
 
         class Car {
             constructor (varName, varBrand, varPrice) {
@@ -20,14 +39,18 @@
                 this._price = varPrice;
             }
 
+            getAttr() {
+                return this._name + this._brand + this._price;
+            }
+
             //static method to return which car is more expensive
             static comparePrices(car1, car2) {
 
                 if (car1._price > car2._price) {
-                    console.log(car1._name + " is more expensive than " + car2._name);
+                    return car1._name + " is more expensive than " + car2._name;
                 } 
                 else {
-                    console.log(car2._name + " is more expensive than " + car1._name);
+                    return car2._name + " is more expensive than " + car1._name;
                 }
             }
         }
@@ -37,7 +60,9 @@
         const carY = new Car("458 Italia", "Ferrari", 340000);
 
         //Reference class, not objects to use static method
-        Car.comparePrices(carY, carX);
+        console.log(Car.comparePrices(carY, carX));
+        
+        
 
     </script>
 </body>

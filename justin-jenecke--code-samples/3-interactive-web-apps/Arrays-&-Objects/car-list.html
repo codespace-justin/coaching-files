@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car List</title>
+</head>
+<body>
+
+    Create a car
+    <br><br>
+
+    <input type="text" id="input1">
+    <input type="text" id="input2"> 
+    <input type="text" id="input3">
+
+    <br><br>
+
+    <button id="create">Create</button>
+
+    <br><br>
+
+    <button id="refresh">refresh</button>
+
+    <br><br>
+
+    All cars in list:
+    <div id="entry">
+
+    </div>
+
+    <script>
+
+    /* --- Class --- */
+
+        class Car {
+            constructor (varName, varBrand, varPrice) {
+
+                this._name = varName,
+                this._brand = varBrand,
+                this._price = varPrice;
+            }
+
+            getAttr() {
+                return this._name + this._brand + this._price;
+            }
+
+            //static method to return which car is more expensive
+            static comparePrices(car1, car2) {
+
+                if (car1._price > car2._price) {
+                    return car1._name + " is more expensive than " + car2._name;
+                } 
+                else {
+                    return car2._name + " is more expensive than " + car1._name;
+                }
+            }
+        }
+
+    /* --- Array to store objects --- */
+
+        const cars = [];
+
+    /* --- Variables --- */
+
+        //getting references to input fields
+        const input1 = document.getElementById('input1');
+        const input2 = document.getElementById('input2');
+        const input3 = document.getElementById('input3');
+
+        //getting references to buttons
+        const create = document.getElementById('create');
+        const refresh = document.getElementById('refresh');
+
+        //getting reference to div where content is displayed
+        const entrypoint = document.getElementById('entry');
+
+    /* --- functions --- */
+
+        //Creates object using values of input fields
+        create.onclick = function createCar() {
+
+            let newCar = new Car (input1.value, input2.value, input3.value);
+            console.log(newCar);
+
+            cars.push(newCar);
+
+            console.log(cars);
+
+        }
+
+        //Displays contents in Arrya
+        refresh.onclick = function (){
+
+            //clears content in div
+            entrypoint.innerHTML = '';
+
+            //inserts each car in array into div content
+            cars.forEach(car => {
+                entrypoint.innerHTML += `${car.getAttr()} <br><br>`;
+            });
+
+        }
+        
+    </script>
+</body>
+</html>
