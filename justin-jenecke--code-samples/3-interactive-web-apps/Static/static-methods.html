@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static</title>
+</head>
+<body>
+
+    Static methods
+
+    <script>
+
+        class Car {
+            constructor (varName, varBrand, varPrice) {
+
+                this._name = varName,
+                this._brand = varBrand,
+                this._price = varPrice;
+            }
+
+            //static method to return which car is more expensive
+            static comparePrices(car1, car2) {
+
+                if (car1._price > car2._price) {
+                    console.log(car1._name + " is more expensive than " + car2._name);
+                } 
+                else {
+                    console.log(car2._name + " is more expensive than " + car1._name);
+                }
+            }
+        }
+
+        //Create two objects for test data
+        const carX = new Car("Gallardo", "Lamborgini", 100000);
+        const carY = new Car("458 Italia", "Ferrari", 340000);
+
+        //Reference class, not objects to use static method
+        Car.comparePrices(carY, carX);
+
+    </script>
+</body>
+</html>
