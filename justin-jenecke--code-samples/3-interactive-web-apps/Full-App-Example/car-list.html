@@ -65,7 +65,7 @@
 
     /* --- Array to store objects --- */
 
-        const cars = [];
+        let cars = [];
 
         let x = new Car('s','s','s');
 
@@ -89,29 +89,34 @@
         //Creates object using values of input fields
         create.onclick = function createCar() {
 
+            //create a new Car object
+            //setting instance variables of car = to the values in the input fields
             let newCar = new Car (input1.value, input2.value, input3.value);
             console.log(newCar);
 
+            //dsiplaying new cars values in div with ID of entrypoint
             entrypoint.innerHTML += `${newCar._name} ${newCar._brand} ${newCar._price} `;
 
+            //Converting JavaScript object into String
             let newCarJson = JSON.stringify(newCar);
 
+            //Using setItem funcion to save Car object to SessionStorage
+            //first param = key, second param = object
             sessionStorage.setItem(newCar._name, newCarJson);
 
-            /*
+            //add car object to Array of cars
             cars.push(newCar);
-
-            console.log(cars);*/
 
         }
 
         //Displays contents in Arrya
         refresh.onclick = function displayContents(){
 
-            //clears content in div
+            //clears content in div so only new content is displayed
             entrypoint.innerHTML = '';
 
             //inserts each car in array into div content
+            //using forEachLoop
         //name of array var
             cars.forEach(car => {
 
@@ -121,16 +126,22 @@
 
         }
 
+
         save.onclick = function saveToSession() {
 
+            //Converting Array of cars to JSON String
             const jsonCars = JSON.stringify(cars); 
 
+            //printing out JSON string of Cars
             console.log(jsonCars);
 
-           // const javascriptCars = JSON.parse(jsonCars);
+           //Converting JSON cars back to JavaScript
+           cars = JSON.parse(jsonCars);
 
-            //console.log(javascriptCars);
+            //Printing the list of cars out
+            console.log(cars);
 
+            //saving JSON string of cars to session storage
             sessionStorage.setItem("CarList", jsonCars, ()=> {
                 console.log('saved in storage!')
             });

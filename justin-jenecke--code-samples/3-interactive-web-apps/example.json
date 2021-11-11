@@ -1,12 +1,10 @@
+    [
+        {
+            "_name":"sentra",
+            "_brand":"nissan",
+            "_price":"30"},
 
-
-        [
-            {
-                "_name":"sentra",
-                "_brand":"nissan",
-                "_price":"30"},
-
-            {
+        {
                 "_name":"sentra",
                 "_brand":"nissan",
                 "_price":"30"},
