@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car List</title>
 </head>
+
+<!-- Start of DOM -->
+
 <body>
 
     Create a car
@@ -18,24 +21,26 @@
     <br><br>
 
     <button id="create">Create</button>
-
     <br><br>
 
     <button id="refresh">refresh</button>
-
+    <button id="save">save</button>
     <br><br>
 
     All cars in list:
+
     <div id="entry">
 
     </div>
+
+<!-- Start of Script and end of DOM -->
 
     <script>
 
     /* --- Class --- */
 
         class Car {
-            constructor (varName, varBrand, varPrice) {
+            constructor (varName, varBrand, varPrice, varYear) {
 
                 this._name = varName,
                 this._brand = varBrand,
@@ -62,6 +67,8 @@
 
         const cars = [];
 
+        let x = new Car('s','s','s');
+
     /* --- Variables --- */
 
         //getting references to input fields
@@ -72,6 +79,7 @@
         //getting references to buttons
         const create = document.getElementById('create');
         const refresh = document.getElementById('refresh');
+        const save = document.getElementById('save');
 
         //getting reference to div where content is displayed
         const entrypoint = document.getElementById('entry');
@@ -84,25 +92,52 @@
             let newCar = new Car (input1.value, input2.value, input3.value);
             console.log(newCar);
 
+            entrypoint.innerHTML += `${newCar._name} ${newCar._brand} ${newCar._price} `;
+
+            let newCarJson = JSON.stringify(newCar);
+
+            sessionStorage.setItem(newCar._name, newCarJson);
+
+            /*
             cars.push(newCar);
 
-            console.log(cars);
+            console.log(cars);*/
 
         }
 
         //Displays contents in Arrya
-        refresh.onclick = function (){
+        refresh.onclick = function displayContents(){
 
             //clears content in div
             entrypoint.innerHTML = '';
 
             //inserts each car in array into div content
+        //name of array var
             cars.forEach(car => {
-                entrypoint.innerHTML += `${car.getAttr()} <br><br>`;
+
+                //entrypoint.innerHTML += `${car.getAttr()} <br><br>`;
+                entrypoint.innerHTML += `${car._name} ${car._brand} ${car._price} <br>`;
             });
 
         }
-        
+
+        save.onclick = function saveToSession() {
+
+            const jsonCars = JSON.stringify(cars); 
+
+            console.log(jsonCars);
+
+           // const javascriptCars = JSON.parse(jsonCars);
+
+            //console.log(javascriptCars);
+
+            sessionStorage.setItem("CarList", jsonCars, ()=> {
+                console.log('saved in storage!')
+            });
+            
+        }
+
+
     </script>
 </body>
 </html>
