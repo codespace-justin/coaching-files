@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session storage</title>
+</head>
+<body>
+
+    Session storage
+
+    Check the console for output of JavaScript code
+    <script>
+
+        //Eg #2:
+
+        let obj = {name: "Lyndon", 
+                age: 42, 
+                address: 
+                    {suburb : "South", city : "Cape Town", code : 8001}
+                };
+
+        let obj2 = {
+            name: 'justin',
+            age: '23',
+            likes: 'coffee'
+        };  
+        
+
+        //Convert obj2 to JSON String
+        //Saving JSON String to variable obj2JSON
+        let obj2JSON = JSON.stringify(obj2);
+  
+        //Printing both obj2 and obj2JSON to console to compare difference
+        console.log(obj2);
+        console.log(obj2JSON);
+
+
+        //save obj2JSON to session storage
+        sessionStorage.setItem("exampleJson", obj2JSON);
+
+        //get exampleJSON from session storage and save it back to obj2JSON
+        obj2JSON = sessionStorage.getItem("exampleJson");
+
+        console.log(obj2JSON);
+
+        obj2 = JSON.parse(obj2JSON);
+
+        console.log(obj2);
+
+        /*
+            Notes:
+
+            The whole point of this example is simply to convert a JavaSctipt object to JSON,
+            save it to session storage, get it back from session storage, convert it back to 
+            JavaScript, and log the JavaScript object back to the console.
+
+            1.  In this example we are taking the object obj2 declared on line 23 and we converting
+                it into a JSON string on line 32 and saving it to a new variable called obj2JSON
+
+            2.  line 40 saves this JSON string to session storage and it will remain there as long as
+                the tab remains open.
+
+            3.  line 43 looks for an object in session storage with the id of "exampleJson" and gets
+                it back from session storage. After this it puts the JSON string from session back into 
+                the variable called obj2JSON
+                
+            4.  line 47 converts the JSON string stored in obJSON2 back into a JavaScript object and
+                puts it back into the variable obj2
+            
+        */
+
+    </script>
+</body>
+</html>

@@ -4,53 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>local storage</title>
 </head>
 <body>
 
     local storage
 
+    Check the console for output of JavaScript code
     <script>
 
         //Eg #2:
 
-        obj = {name: "Lyndon", 
+        let obj = {name: "Lyndon", 
                 age: 42, 
                 address: 
                     {suburb : "South", city : "Cape Town", code : 8001}
-                };
+                }; 
 
-        obj2 = {
-            name: 'justin',
-            age: '23',
-            likes: 'coffee'
-        };  
-        
-        obj2JSON = JSON.stringify(obj2);
-
-        
-        console.log(obj2);
-        console.log(obj2JSON);
+        //Convert obj to JSON String
+        //Saving JSON String to variable objJSON
+        let objJSON = JSON.stringify(obj);
+  
+        //Printing both obj and objJSON to console to compare difference
+        console.log(obj);
+        console.log(objJSON);
 
 
-        sessionStorage.setItem("exampleJson", obj2JSON);
+        //save objJSON to local storage
+        localStorage.setItem("exampleJson", objJSON);
 
-        let variable = sessionStorage.getItem("exampleJson");
+        //get exampleJSON from local storage and save it back to obj2JSON
+        objJSON = localStorage.getItem("exampleJson");
 
-        console.log(variable);
+        console.log(objJSON);
 
-        let convertedObj = JSON.parse(variable);
+        obj2 = JSON.parse(objJSON);
 
-        console.log(convertedObj);
+        console.log(obj);
 
+        /*
+            Notes:
 
-        /*myData = JSON.stringify(obj);
-        
-        localStorage.setItem("userData", myData);
+            The whole point of this example is simply to convert a JavaSctipt object to JSON,
+            save it to local storage, get it back from local storage, convert it back to 
+            JavaScript, and log the JavaScript object back to the console.
 
-        myText = localStorage.getItem("userData");
-        newObj = JSON.parse(myText);
-        console.log(newObj.address);*/
+            1.  In this example we are taking the object obj2 declared on line 23 and we converting
+                it into a JSON string on line 32 and saving it to a new variable called obj2JSON
+
+            2.  line 40 saves this JSON string to local storage and it save the data locally to your
+                computer anbd when remain there even after you close your browser
+
+            3.  line 43 looks for an object in local storage with the id of "exampleJson" and gets
+                it back from local storage. After this it puts the JSON string from local back into 
+                the variable called objJSON
+                
+            4.  line 47 converts the JSON string stored in obJSON back into a JavaScript object and
+                puts it back into the variable obj
+            
+        */
 
     </script>
 </body>
