@@ -111,7 +111,7 @@
         }
 
         //Displays contents in Arrya
-        refresh.onclick = function displayContents(){
+        /*refresh.onclick = function displayContents(){
 
             //clears content in div so only new content is displayed
             entrypoint.innerHTML = '';
@@ -125,7 +125,7 @@
                 entrypoint.innerHTML += `${car._name} ${car._brand} ${car._price} <br>`;
             });
 
-        }
+        }*/
 
 
         save.onclick = function saveTolocal() {
@@ -149,9 +149,9 @@
             
         }
 
-        function getAllFromStore() {
+        refresh.onclick = function getAllFromStore() {
 
-        for (let i = 0; i < localStorage.length ; i++ ) {
+            for (let i = 0; i < localStorage.length ; i++ ) {
 
                 let x = localStorage.getItem(localStorage.key(i));
                 console.log(x);
@@ -159,12 +159,11 @@
                 x = JSON.parse(x);
                 //cars.push(x);   
 
+                //entrypoint.innerHTML = "<li>" + x._name + x._brand + x._price + "</li>";
                 entrypoint.innerHTML += `<li>${x._name} ${x._brand} ${x._price}</li>`
 
             }
         }
-
-        getAllFromStore();
 
     </script>
 </body>
