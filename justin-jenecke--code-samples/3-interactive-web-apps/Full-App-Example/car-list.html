@@ -29,9 +29,9 @@
 
     All cars in list:
 
-    <div id="entry">
+    <ul id="entry">
 
-    </div>
+    </ul>
 
 <!-- Start of Script and end of DOM -->
 
@@ -40,11 +40,12 @@
     /* --- Class --- */
 
         class Car {
-            constructor (varName, varBrand, varPrice, varYear) {
+            constructor (varName, varBrand, varPrice, varYear, key) {
 
                 this._name = varName,
                 this._brand = varBrand,
                 this._price = varPrice;
+                this._key = key;
             }
 
             getAttr() {
@@ -100,9 +101,9 @@
             //Converting JavaScript object into String
             let newCarJson = JSON.stringify(newCar);
 
-            //Using setItem funcion to save Car object to SessionStorage
+            //Using setItem funcion to save Car object to localStorage
             //first param = key, second param = object
-            sessionStorage.setItem(newCar._name, newCarJson);
+            localStorage.setItem(newCar._name, newCarJson);
 
             //add car object to Array of cars
             cars.push(newCar);
@@ -127,7 +128,7 @@
         }
 
 
-        save.onclick = function saveToSession() {
+        save.onclick = function saveTolocal() {
 
             //Converting Array of cars to JSON String
             const jsonCars = JSON.stringify(cars); 
@@ -141,13 +142,29 @@
             //Printing the list of cars out
             console.log(cars);
 
-            //saving JSON string of cars to session storage
-            sessionStorage.setItem("CarList", jsonCars, ()=> {
+            //saving JSON string of cars to local storage
+            localStorage.setItem("CarList", jsonCars, ()=> {
                 console.log('saved in storage!')
             });
             
         }
 
+        function getAllFromStore() {
+
+        for (let i = 0; i < localStorage.length ; i++ ) {
+
+                let x = localStorage.getItem(localStorage.key(i));
+                console.log(x);
+
+                x = JSON.parse(x);
+                //cars.push(x);   
+
+                entrypoint.innerHTML += `<li>${x._name} ${x._brand} ${x._price}</li>`
+
+            }
+        }
+
+        getAllFromStore();
 
     </script>
 </body>
