@@ -53,14 +53,23 @@
             //Event Handlers:
 
             input.oninput = function myFunction(event) {
-                console.log('you added input:');
+                
+                //console.log('you added input:');
+                //log event object to console
                 console.log(event);
+
+                //examples of attributes in Event Object
+                console.log("event type: " + event.inputType);
+                console.log("data entered: " + event.data);
+                console.log(`target of event: ${event.view}`);
             }
+
 
             button.onclick = function myFunction(event) {
                 console.log('you added clicked on the button:');
                 console.log(event);
             }
+
 
             divider.onmouseover = function myFunction(event) {
                 console.log('you hovered over the div, event details:');
