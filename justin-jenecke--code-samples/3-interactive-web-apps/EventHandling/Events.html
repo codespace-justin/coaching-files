@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+
+        </style>
+
+        <title>JS Basics</title>
+    </head>
+    
+    <body>
+    
+
+        <div>
+
+            <input id="input" type="text">
+
+            <button id="button" >Button</button>
+
+            <div id="div" >
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro corporis <br>
+                dolore nemo iusto iste ea saepe, atque dolorum. Quo placeat ratione repudiandae <br> 
+                nihil, ducimus modi eos sit deleniti incidunt tempore?
+            </div>
+
+        </div>
+
+    <!-- Start of JavaScript -->
+
+        <script>
+            
+            //get input HTML Element
+            const input = document.getElementById('input');
+
+            //get button Element
+            const button = document.getElementById('button');
+
+            //get div Element
+            const divider = document.getElementById('div');
+
+
+            //Event Handlers:
+
+            input.oninput = function myFunction(event) {
+                console.log('you added input:');
+                console.log(event);
+            }
+
+            button.onclick = function myFunction(event) {
+                console.log('you added clicked on the button:');
+                console.log(event);
+            }
+
+            divider.onmouseover = function myFunction(event) {
+                console.log('you hovered over the div, event details:');
+                console.log(event);
+            }
+
+        </script>
+
+    </body>
+
+</html>

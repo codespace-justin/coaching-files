@@ -18,10 +18,20 @@
     - let x;
     //console.log(x) will return undefined
 
+
     - assignment or setting a variable is done using the = sign
     - this is used to assign the variable a value
     - let x = 10;
     //console.log(x) will return 10
+
+
+    - In JavaScript you also get 2 types of variables: Namely *let and *const
+
+    - Let behaves like the word variable dictates, its value can change and be manipulated, and cannot be trusted to stay constant.
+        * eg: someone's age, speed a car is traveling, the current exchange rate, etc. 
+
+    - Const is the complete opposite, hence the name const, and is used to store variables or data that will never change
+        * eg: HTML components, functions, unique ID numbers, etc. 
 
 ### Data Types: 
 
@@ -37,9 +47,27 @@
 
     *Object* : a variable that has other variables as properties
 
+#### Note:
+
+    - You also get a special String in JavaScript known as a 'Template String'
+
+    - Template Strings are used together with normal Strings to inject other variables or objects into the String
+    - Can be used to inject HTML inside a String as well
+    - Typical uses cases include:
+        * dynamically creating a new HTML Element using JavaScript
+        * dynamically injecting a name into a custom greeting message
+        * Populating HTML elements such as an <ul> with variables stored in an array
+
+
 ### Control Statements/Conditionals: 
 
     - Perform an action if a condition is met (if true, when an event happens, etc.)
+
+    - If statement
+
+    - If Else
+
+    - Switch Statement
 
 ### Functions:
 
