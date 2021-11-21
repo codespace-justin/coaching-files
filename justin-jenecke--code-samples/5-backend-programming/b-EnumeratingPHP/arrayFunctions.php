@@ -57,3 +57,29 @@ $length = count($array);
 echo "I am $length long";
 
 //expected output "I am 5 long"
+
+/*
+    More Functions:
+
+    # End
+
+        - The end() returns the value of the last element in the array. It takes one argument being the array itself.
+
+    # Sort
+
+        - The sort() function sorts your array alphabetically. 
+
+        - It takes one argument being the array to be sorted.  
+
+        - It has a related function rsort() which sorts the array in reverse alphabetical order.
+
+    # Pop and Shift
+
+        - These two functions allow us to remove values from the end and beginning of an array respectively. 
+        - array_pop() takes one argument, the array, and removes the last value. 
+        - array_shift() removes the first value from the array.
+
+    # Push and UnShift are the opposites of pop and shift
+
+    
+*/
