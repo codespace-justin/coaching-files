@@ -16,8 +16,15 @@
             <h1>{{title}}</h1>
             <p id="output"></p>
             <p v-if="visible">This is visible</p>
+        
+            <ul>
+                <li v-for="item in items">{{item}}</li>  
+            </ul> 
         </div>
-    
+
+        <button id="visi">visible?</button>
+        
+
 <!-- End of Markup -->
 
         <script>
@@ -27,7 +34,10 @@
                 data : {
                     title : 'Vue is good to go!',
                     text : 'lorem dsogl lseok orklgk  lkimewlgk imlksmv  imiml',
-                    visible : false
+                    visible : false,
+                    items : ["toothbrush",
+                            "toothpaste",
+                            "dental floss"]
                 },
                 methods : {
                     printTitle(){console.log("The title of this component is " + this.text)}
@@ -36,7 +46,14 @@
 
             document.getElementById("output").innerHTML = component1.$data.text;
 
+            document.getElementById("visi").onclick = function() {
 
+                if (component1.$data.visible === true) {
+                    component1.$data.visible = false;
+                } else {
+                    component1.$data.visible = true;
+                }
+            }
 
         </script>
     </body>
