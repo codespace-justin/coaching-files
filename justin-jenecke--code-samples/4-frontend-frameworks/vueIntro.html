@@ -15,22 +15,28 @@
         
             <h1>{{title}}</h1>
             <p id="output"></p>
+            <p v-if="visible">This is visible</p>
         </div>
     
 <!-- End of Markup -->
-
 
         <script>
 
             let component1 = new Vue({
                 el : '#myVueItem',
                 data : {
-                title : 'Vue is good to go!',
-                text : 'lorem dsogl lseok orklgk  lkimewlgk imlksmv  imiml'
+                    title : 'Vue is good to go!',
+                    text : 'lorem dsogl lseok orklgk  lkimewlgk imlksmv  imiml',
+                    visible : false
+                },
+                methods : {
+                    printTitle(){console.log("The title of this component is " + this.text)}
                 }
             });
 
             document.getElementById("output").innerHTML = component1.$data.text;
+
+
 
         </script>
     </body>
