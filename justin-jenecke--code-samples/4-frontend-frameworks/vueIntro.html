@@ -12,18 +12,32 @@
         <script src="https://unpkg.com/vue"></script>
 
         <div id="myVueItem">
-        
-            <h1>{{title}}</h1>
-            <p id="output"></p>
-            <p v-if="visible">This is visible</p>
-        
-            <ul>
-                <li v-for="item in items">{{item}}</li>  
-            </ul> 
-        </div>
+        <!--             
+            <button @click='printTitle'>Test</button>
+        -->
 
-        <button id="visi">visible?</button>
-        
+            <!-- Titlw -->
+            <h1>{{title}}</h1>
+
+            <!-- Control Panel -->
+            <button v-if="STATE === false" @click="changeState(true)">Add Item</button>
+            <button v-else-if="STATE === true" @click="changeState(false)">Cancel</button>
+
+            <!-- Todo's List -->
+            <template v-if="STATE === true">
+
+                <p id="output"></p>
+
+                <input type="text" v-model="newItem" @keyup.enter="addItem">
+                <button @click="addItem" >Add Item</button>
+            
+                <ul>
+                    <li v-for="item in items">{{item}}</li>  
+                </ul> 
+            
+            </template>
+
+        </div>
 
 <!-- End of Markup -->
 
@@ -32,28 +46,23 @@
             let component1 = new Vue({
                 el : '#myVueItem',
                 data : {
-                    title : 'Vue is good to go!',
-                    text : 'lorem dsogl lseok orklgk  lkimewlgk imlksmv  imiml',
-                    visible : false,
+                    title : 'Vue Todo App',
+                    text : 'Add an Item to the list:',
+                    newItem : 'item',
+                    visible : true,
                     items : ["toothbrush",
                             "toothpaste",
-                            "dental floss"]
+                            "dental floss"],
+                    STATE: false
                 },
                 methods : {
-                    printTitle(){console.log("The title of this component is " + this.text)}
+                    printTitle(){console.log("The title of this component is " + this.text)},
+                    addItem() {this.items.push(this.newItem)},
+                    changeState(s) {this.STATE = s}
                 }
             });
 
             document.getElementById("output").innerHTML = component1.$data.text;
-
-            document.getElementById("visi").onclick = function() {
-
-                if (component1.$data.visible === true) {
-                    component1.$data.visible = false;
-                } else {
-                    component1.$data.visible = true;
-                }
-            }
 
         </script>
     </body>
