@@ -5,8 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Vue Intro</title>
-    </head>
 
+        <style>
+            .strike {
+                text-decoration: line-through;
+            }
+        </style>
+
+    </head>
 
     <body>
         <script src="https://unpkg.com/vue"></script>
@@ -32,7 +38,9 @@
                 <button :disabled="newItem == ''" @click="addItem">Add Item</button>
             
                 <ul>
-                    <li v-for="item in items">{{item}}</li>  
+                    <li v-for="item in items" :class="{strike : item.done == true}" @click="completeTask(item)">
+                        {{item.todo}}
+                    </li>  
                 </ul> 
             
             </template>
@@ -50,22 +58,43 @@
                     text : 'Add an Item to the list:',
                     newItem : "",
                     visible : true,
-                    items : ["toothbrush",
-                            "toothpaste",
-                            "dental floss"],
+                    items : [
+                            {
+                                todo : "toothbrush",
+                                done : true
+                            },
+                            {
+                                todo : "toothpaste",
+                                done : false
+                            },
+                            {
+                                todo : "dental floss",
+                                done : false
+                            }
+                            ],
                     STATE: false
                 },
                 methods : {
                     printTitle(){console.log("The title of this component is " + this.text)},
                     addItem() {
-                        this.items.push(this.newItem)
+                        this.items.push(
+                            {
+                                todo : this.newItem,
+                                done : false
+                            })
+
                         this.newItem = ""
                     },
-                    changeState(s) {this.STATE = s}
+                    changeState(s) {
+                        this.STATE = s}
+                    ,
+                    completeTask(task) {
+                        task.done = !task.done
+                    }
                 }
             });
 
-            document.getElementById("output").innerHTML = component1.$data.text;
+            //document.getElementById("output").innerHTML = component1.$data.text;
 
         </script>
     </body>
