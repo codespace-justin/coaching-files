@@ -29,7 +29,7 @@
                 <p id="output"></p>
 
                 <input type="text" v-model="newItem" @keyup.enter="addItem">
-                <button @click="addItem" >Add Item</button>
+                <button :disabled="newItem == ''" @click="addItem">Add Item</button>
             
                 <ul>
                     <li v-for="item in items">{{item}}</li>  
@@ -48,7 +48,7 @@
                 data : {
                     title : 'Vue Todo App',
                     text : 'Add an Item to the list:',
-                    newItem : 'item',
+                    newItem : "",
                     visible : true,
                     items : ["toothbrush",
                             "toothpaste",
@@ -57,7 +57,10 @@
                 },
                 methods : {
                     printTitle(){console.log("The title of this component is " + this.text)},
-                    addItem() {this.items.push(this.newItem)},
+                    addItem() {
+                        this.items.push(this.newItem)
+                        this.newItem = ""
+                    },
                     changeState(s) {this.STATE = s}
                 }
             });
