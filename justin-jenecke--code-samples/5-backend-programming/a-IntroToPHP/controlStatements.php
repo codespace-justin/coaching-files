@@ -14,6 +14,7 @@ Basic Control Statements:
 
 */
 
+echo "something";
 
 # Basic Conditionals:  >, <, >=, <= and ==
 

@@ -9,6 +9,7 @@
         <style>
             .strike {
                 text-decoration: line-through;
+                color: #efefef;
             }
         </style>
 
@@ -38,7 +39,7 @@
                 <button :disabled="newItem == ''" @click="addItem">Add Item</button>
             
                 <ul>
-                    <li v-for="item in items" :class="{strike : item.done == true}" @click="completeTask(item)">
+                    <li v-for="item in sortedItems" :class="{strike : item.done == true}" @click="completeTask(item)">
                         {{item.todo}}
                     </li>  
                 </ul> 
@@ -90,6 +91,11 @@
                     ,
                     completeTask(task) {
                         task.done = !task.done
+                    }
+                },
+                computed : {
+                    sortedItems() {
+                        return this.items.slice(0).reverse();
                     }
                 }
             });
