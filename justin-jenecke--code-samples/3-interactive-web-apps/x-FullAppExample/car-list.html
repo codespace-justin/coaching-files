@@ -45,6 +45,7 @@
                 this._name = varName,
                 this._brand = varBrand,
                 this._price = varPrice;
+                this._year = year;
                 this._key = key;
             }
 
@@ -69,7 +70,7 @@
         console.log("I made this changes");
         let cars = [];
 
-        let x = new Car('s','s','s');
+        const myCar = new Car("SW20", "Toyota", "100", 1870, "sdhfdjh");
 
     /* --- Variables --- */
 
@@ -110,24 +111,6 @@
             cars.push(newCar);
 
         }
-
-        //Displays contents in Arrya
-        /*refresh.onclick = function displayContents(){
-
-            //clears content in div so only new content is displayed
-            entrypoint.innerHTML = '';
-
-            //inserts each car in array into div content
-            //using forEachLoop
-        //name of array var
-            cars.forEach(car => {
-
-                //entrypoint.innerHTML += `${car.getAttr()} <br><br>`;
-                entrypoint.innerHTML += `${car._name} ${car._brand} ${car._price} <br>`;
-            });
-
-        }*/
-
 
         save.onclick = function saveTolocal() {
 
