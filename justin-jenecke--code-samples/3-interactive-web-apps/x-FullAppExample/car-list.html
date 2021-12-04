@@ -1,153 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car List</title>
-</head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Car List</title>
+    </head>
 
 <!-- Start of DOM -->
 
-<body>
+    <body>
 
-    Create a car
-    <br><br>
+        Create a car
+        <br><br>
 
-    <input type="text" id="input1">
-    <input type="text" id="input2"> 
-    <input type="text" id="input3">
+        <input type="text" id="input1">
+        <input type="text" id="input2"> 
+        <input type="text" id="input3">
 
-    <br><br>
+        <br><br>
 
-    <button id="create">Create</button>
-    <br><br>
+        <button id="create">Create</button>
+        <br><br>
 
-    <button id="refresh">refresh</button>
-    <button id="save">save</button>
-    <br><br>
+        <button id="refresh">refresh</button>
+        <button id="save">save</button>
+        <br><br>
 
-    All cars in list:
+        All cars in list:
 
-    <ul id="entry">
+        <ul id="entry">
 
-    </ul>
+        </ul>
 
 <!-- Start of Script and end of DOM -->
 
-    <script>
+        <script>
 
-    /* --- Class --- */
+        /* --- Class --- */
 
-        class Car {
-            constructor (varName, varBrand, varPrice, varYear, key) {
+            class Car {
 
-                this._name = varName,
-                this._brand = varBrand,
-                this._price = varPrice;
-                this._year = year;
-                this._key = key;
-            }
+                constructor (varName, varBrand, varPrice, varYear, key) {
 
-            getAttr() {
-                return this._name + this._brand + this._price;
-            }
+                    this._name = varName,
+                    this._brand = varBrand,
+                    this._price = varPrice;
+                    this._year = year;
+                    this._key = key;
+                }
 
-            //static method to return which car is more expensive
-            static comparePrices(car1, car2) {
+                getAttr() {
+                    return this._name + this._brand + this._price;
+                }
 
-                if (car1._price > car2._price) {
-                    return car1._name + " is more expensive than " + car2._name;
-                } 
-                else {
-                    return car2._name + " is more expensive than " + car1._name;
+                //static method to return which car is more expensive
+                static comparePrices(car1, car2) {
+
+                    if (car1._price > car2._price) {
+                        return car1._name + " is more expensive than " + car2._name;
+                    } 
+                    else {
+                        return car2._name + " is more expensive than " + car1._name;
+                    }
                 }
             }
-        }
 
-    /* --- Array to store objects --- */
+        /* --- Array to store objects --- */
 
-        let cars = [];
+            console.log("I made this changes");
+            let cars = [];
 
-        const myCar = new Car("SW20", "Toyota", "100", "sdhfdjh");
+            const myCar = new Car("SW20", "Toyota", "100", "sdhfdjh");
 
-    /* --- Variables --- */
+        /* --- Variables --- */
 
-        //getting references to input fields
-        const input1 = document.getElementById('input1');
-        const input2 = document.getElementById('input2');
-        const input3 = document.getElementById('input3');
+            //getting references to input fields
+            const input1 = document.getElementById('input1');
+            const input2 = document.getElementById('input2');
+            const input3 = document.getElementById('input3');
 
-        //getting references to buttons
-        const create = document.getElementById('create');
-        const refresh = document.getElementById('refresh');
-        const save = document.getElementById('save');
+            //getting references to buttons
+            const create = document.getElementById('create');
+            const refresh = document.getElementById('refresh');
+            const save = document.getElementById('save');
 
-        //getting reference to div where content is displayed
-        const entrypoint = document.getElementById('entry');
+            //getting reference to div where content is displayed
+            const entrypoint = document.getElementById('entry');
 
-    /* --- functions --- */
+        /* --- functions --- */
 
-        //Creates object using values of input fields
-        create.onclick = function createCar() {
+            //Creates object using values of input fields
+            create.onclick = function createCar() {
 
-            //create a new Car object
-            //setting instance variables of car = to the values in the input fields
-            let newCar = new Car (input1.value, input2.value, input3.value);
-            console.log(newCar);
+                //create a new Car object
+                //setting instance variables of car = to the values in the input fields
+                let newCar = new Car (input1.value, input2.value, input3.value);
+                console.log(newCar);
 
-            //dsiplaying new cars values in div with ID of entrypoint
-            entrypoint.innerHTML += `${newCar._name} ${newCar._brand} ${newCar._price} `;
+                //dsiplaying new cars values in div with ID of entrypoint
+                entrypoint.innerHTML += `${newCar._name} ${newCar._brand} ${newCar._price} `;
 
-            //Converting JavaScript object into String
-            let newCarJson = JSON.stringify(newCar);
+                //Converting JavaScript object into String
+                let newCarJson = JSON.stringify(newCar);
 
-            //Using setItem funcion to save Car object to localStorage
-            //first param = key, second param = object
-            localStorage.setItem(newCar._name, newCarJson);
+                //Using setItem funcion to save Car object to localStorage
+                //first param = key, second param = object
+                localStorage.setItem(newCar._name, newCarJson);
 
-            //add car object to Array of cars
-            cars.push(newCar);
-
-        }
-
-        save.onclick = function saveTolocal() {
-
-            //Converting Array of cars to JSON String
-            const jsonCars = JSON.stringify(cars); 
-
-            //printing out JSON string of Cars
-            console.log(jsonCars);
-
-           //Converting JSON cars back to JavaScript
-           cars = JSON.parse(jsonCars);
-
-            //Printing the list of cars out
-            console.log(cars);
-
-            //saving JSON string of cars to local storage
-            localStorage.setItem("CarList", jsonCars, ()=> {
-                console.log('saved in storage!')
-            });
-            
-        }
-
-        refresh.onclick = function getAllFromStore() {
-
-            for (let i = 0; i < localStorage.length ; i++ ) {
-
-                let x = localStorage.getItem(localStorage.key(i));
-                console.log(x);
-
-                x = JSON.parse(x);
-                //cars.push(x);   
-
-                //entrypoint.innerHTML = "<li>" + x._name + x._brand + x._price + "</li>";
-                entrypoint.innerHTML += `<li>${x._name} ${x._brand} ${x._price}</li>`
+                //add car object to Array of cars
+                cars.push(newCar);
 
             }
-        }
 
-    </script>
-</body>
+            save.onclick = function saveTolocal() {
+
+                //Converting Array of cars to JSON String
+                const jsonCars = JSON.stringify(cars); 
+
+                //printing out JSON string of Cars
+                console.log(jsonCars);
+
+            //Converting JSON cars back to JavaScript
+            cars = JSON.parse(jsonCars);
+
+                //Printing the list of cars out
+                console.log(cars);
+
+                //saving JSON string of cars to local storage
+                localStorage.setItem("CarList", jsonCars, ()=> {
+                    console.log('saved in storage!')
+                });
+                
+            }
+
+            refresh.onclick = function getAllFromStore() {
+
+                for (let i = 0; i < localStorage.length ; i++ ) {
+
+                    let x = localStorage.getItem(localStorage.key(i));
+                    console.log(x);
+
+                    x = JSON.parse(x);
+                    //cars.push(x);   
+
+                    //entrypoint.innerHTML = "<li>" + x._name + x._brand + x._price + "</li>";
+                    entrypoint.innerHTML += `<li>${x._name} ${x._brand} ${x._price}</li>`
+
+                }
+            }
+
+        </script>
+    </body>
 </html>
