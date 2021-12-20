@@ -1,10 +1,10 @@
 <?php
 
-    $myArr = ["name" => "John", "age" => 23, "middlename" => null, "nationality" => "England"];
+    $person = ["name" => "John", "age" => 23, "middlename" => null, "nationality" => "England"];
 
-    $myJSON = json_encode($myArr);
+    $exampleJSON = json_encode($person);
 
-    echo $myJSON;
+    echo $exampleJSON;
     // Output: {"name":"John", "age":23, "middlename":null, "nationality":"England"}
 
 ?>
