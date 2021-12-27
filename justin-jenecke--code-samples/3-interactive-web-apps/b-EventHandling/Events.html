@@ -7,6 +7,21 @@
 
         <style>
 
+            .java {
+                background-color: black;
+                color: chartreuse;
+            }
+
+            .php {
+                background-color: rgb(136, 107, 216);
+                color: rgb(250, 250, 250);
+            }
+
+            .react {
+                background-color: rgb(29, 86, 160);
+                color: rgb(250, 250, 250);
+            }
+            
         </style>
 
         <title>JS Basics</title>
@@ -24,14 +39,23 @@
             </div>
 
             <br>
+        
+            <h2>Programming Languages:</h2>
+            <ul id="theList" style="background-color: gray;">
+                <br>
+            
+                <br>
+            </ul>
+
             <br>
 
-            <input id="input" type="text">
+            <input id="input1" type="text" >
+            <input id="input2" type="text" >
 
             <br>
             <br>
 
-            <button id="button" >Button</button>
+            <button id="button" >Add</button>
 
         </div>
 
@@ -42,17 +66,20 @@
             //get div Element
             const divider = document.getElementById('div');
             
-            //get input HTML Element
-            const input = document.getElementById('input');
+            // UL list element
+            const theList = document.getElementById('theList');
 
             //get button Element
             const button = document.getElementById('button');
+
+            //get button Element
+            //const del = document.getElementById('delete');
 
 
 
             //Event Handlers:
 
-            input.oninput = function myFunction(event) {
+            /*input.oninput = function myFunction(event) {
                 
                 //console.log('you added input:');
                 //log event object to console
@@ -62,19 +89,88 @@
                 console.log("event type: " + event.inputType);
                 console.log("data entered: " + event.data);
                 console.log(`target of event: ${event.view}`);
-            }
+            }*/
 
 
             button.onclick = function myFunction(event) {
-                console.log('you added clicked on the button:');
-                console.log(event);
+
+                // Get values of inputs
+                const input1 = document.getElementById('input1');
+                const input2 = document.getElementById('input2');
+            
+                //console.log(input1.value);
+                //console.log(input2.value);
+
+                // Creating Elements
+                let item = document.createElement("li")
+
+                //  create Language Button
+                let lang = document.createElement("button")
+                lang.classList = input1.value;
+
+                //create difficulty Button
+                let difficulty = document.createElement("button")
+
+                // create delete Button
+                let del = document.createElement("button")
+
+                // Adding Text to Elements using input fields
+                lang.innerHTML = input1.value;
+                difficulty.innerHTML = input2.value;
+                del.innerHTML = "X";
+
+                // Adding List Item to DOM
+                item.appendChild(lang);
+                item.appendChild(difficulty);
+                item.appendChild(del);
+
+                theList.appendChild(item);                
+
             }
+
+            theList.onclick = function(event) {
+
+                /*console.log(event.target)*/
+                console.log(event.target.innerHTML);
+
+                if (event.target.innerHTML == "JavaScript") {
+                    alert("You really like JavaScript")
+                }
+
+                if (event.target.innerHTML == "X") {
+                    console.log(event.target.parentElement);
+
+                    event.target.parentElement.remove();
+                }            
+            }
+
+            arrayX = ["a","b","c","d","e"];
+
+            arrayX.splice(1, 1)
+
+            console.log(arrayX);
+
 
 
             divider.onmouseover = function myFunction(event) {
                 console.log('you hovered over the div, event details:');
-                console.log(event);
+                
             }
+
+
+            // Modern Web Dev
+
+            /*
+            
+                - Presentation Layer : Client Application
+
+
+                - Business Logic Layer : Server Application
+
+
+                - Persistence Layer : Database
+            
+            */
 
         </script>
 

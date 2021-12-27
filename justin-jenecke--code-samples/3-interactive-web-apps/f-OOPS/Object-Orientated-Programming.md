@@ -45,6 +45,7 @@
 
     - A Getter is a public attribute that is used to return a private instance variable of an object.
     - Getters are defined inside of the class itself, so it has the scope of a classes private attributes/instance variables.
+    
     - Eg: get getName() {
         return this._name
       }; 

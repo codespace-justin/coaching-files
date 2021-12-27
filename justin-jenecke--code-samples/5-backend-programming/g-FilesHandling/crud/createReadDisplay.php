@@ -64,6 +64,7 @@
 		<th>Priority</th>
 		<th>Completed</th>
 	</thead>
+	
 	<!-- Table Body Displayed using PHP -->
 	<tbody>
         
