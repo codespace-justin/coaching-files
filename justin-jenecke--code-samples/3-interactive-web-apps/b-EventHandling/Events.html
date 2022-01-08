@@ -30,7 +30,6 @@
     
     <body>
     
-
         <div>
 
             <div id="div" >
@@ -44,7 +43,6 @@
             <h2>Programming Languages:</h2>
             <ul id="theList" style="background-color: gray;">
                 <br>
-            
                 <br>
             </ul>
 
@@ -64,8 +62,17 @@
 
         <script>
 
+            let car = { drivetrain: "rwd", color: "Black", year: 1992 }
+
+            document.addEventListener("click", function(e) {
+
+                console.log(e.target);
+                e.target.innerHTML += `<p> Hello World </p>`;
+
+            });
+
             //get div Element
-            const divider = document.getElementById('div');
+            let divider = document.getElementById('div');
             
             // UL list element
             const theList = document.getElementById('theList');
@@ -76,7 +83,9 @@
             //get button Element
             //const del = document.getElementById('delete');
 
-            //Event Handlers:
+        // ------------------------------------------------------
+        //      Event Handlers:
+        // ------------------------------------------------------
 
             /*input.oninput = function myFunction(event) {
                 
@@ -91,6 +100,7 @@
             }*/
 
 
+            //  Add btn functionality
             button.onclick = function myFunction(event) {
 
                 // Get values of inputs
