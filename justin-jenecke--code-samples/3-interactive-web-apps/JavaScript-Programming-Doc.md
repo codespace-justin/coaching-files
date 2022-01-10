@@ -9,7 +9,7 @@
 
 ## Core Programming Concepts
 
-### Variables: 
+## Variables: 
 
     - Buckets/Boxes/Placeholders for holding information or data, and they consist of 2 parts. The variable itself, and the data stored
       inside the variable
@@ -33,7 +33,9 @@
     - Const is the complete opposite, hence the name const, and is used to store variables or data that will never change
         * eg: HTML components, functions, unique ID numbers, etc. 
 
-### Data Types: 
+<hr><br>
+
+## Data Types: 
 
     *Number* : normal numbers ( 10, 552, 7 )
 
@@ -52,14 +54,27 @@
     - You also get a special String in JavaScript known as a 'Template String'
 
     - Template Strings are used together with normal Strings to inject other variables or objects into the String
+    - They were introduced with ES6
+    - They are by using `backticks` instead 'single' or "double" quotes
     - Can be used to inject HTML inside a String as well
+    - JavaScript variables are denotated with: ${var}
     - Typical uses cases include:
         * dynamically creating a new HTML Element using JavaScript
         * dynamically injecting a name into a custom greeting message
         * Populating HTML elements such as an <ul> with variables stored in an array
 
 
-### Control Statements/Conditionals: 
+Code Example: 
+    
+    // JS Variable
+    let testText = "Hello World";
+
+    // Template String
+    document.body.innerHTML += `<div class="container" id="test"> This is a test for <i>Template Strings</i> : ${testText} </div>`;
+
+<hr><br>
+
+## Control Statements/Conditionals: 
 
     - Perform an action if a condition is met (if true, when an event happens, etc.)
 
@@ -69,7 +84,9 @@
 
     - Switch Statement
 
-### Functions:
+<hr><br>
+
+## Functions:
 
     - Specific instructions given to an application
     - A function is defined by coding: a function *signature, and a function *body
@@ -94,7 +111,7 @@
                 do something;
               }
 
-#### Example:
+#### Code Example:
 
         function addition(x + y) {
 
@@ -105,7 +122,9 @@
 
         //Console will print out 4
 
-### Loops: 
+<hr><br>
+
+## Loops: 
 
     - Used to repeat specific instruction a set amount of times, or untill a condition is met
         * also known as 'looping over' something 
@@ -135,20 +154,27 @@
             * A user enters a number in a form where they name should be
             * You want subtract 2 numbers, but the user only enters 1 digit
 
-### Data Structures: 
+<hr><br>
+
+## Data Structures: 
     
-    - Essentialy one large variable that is used hold data of types and sizes, even other variables. 
-        * eg: an Array or a List
+Essentialy one large variable that is used hold data of types and sizes, even other variables. 
+Examples include: 
+    
+    - Array
+    - List
+    - Map
+    - Set
+    - Stack
 
     - This is an over simplification, but just understand that they exist and do exactly as the name implies, they provide an efficient 
       way to store and hold your data, so that it is easy to save, retrieve or sort your data.
 
-## ----------------------------------------------------------------------------------------------------------------------------------        
+<hr><br>
 
+## What is Programming
 
-## Whats is Programming
-
-### Coding VS Programming
+## Coding VS Programming
 
     - Coding is essentially anything concerned with writing code inside of some text editor or computer and having it produce a result.
 

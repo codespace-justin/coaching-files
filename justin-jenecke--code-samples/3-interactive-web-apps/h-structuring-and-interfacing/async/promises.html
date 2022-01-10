@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        
+        /*--------------------------------------------------
+            Basic Example 1
+        --------------------------------------------------*/
+
+        function divide(num1, num2) {
+
+            // function must return Promise object
+            return new Promise( function(resolve, reject) {
+
+                // Where you insert logic of function:
+                
+                // Reject case
+                if (num2 == 0) {
+                    // return error value
+                    // is stored inside error variable when promise is returned
+                    return reject(new Error("cannot divide by 0"));
+                }
+
+                // return result value
+                // is stored inside result variable when promise is returned
+                return resolve(num1/num2 + " is the resolved value")
+            })
+
+        }
+
+        /* ---- return promise ---- */
+
+        // function        // callback
+        divide(20, 0).then(function(result) {
+
+            // Custom message for resolve
+            console.log("Promise resolved! " + result);
+
+        }).catch(function(error) {
+
+            // Custom message for Reject
+            console.log("error with division: ");
+            console.log(error);
+        });
+
+    </script>
+
+</body>
+</html>
