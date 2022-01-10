@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises 2</title>
+</head>
+<body>
+
+    <script>
+        
+        /*--------------------------------------------------
+            Basic Example 1
+        --------------------------------------------------*/
+
+        // --------------- Setup Local Storage ---------------
+
+        //create test object
+        let testObject = {delivery: true, type: "middle", cost: 3600};
+
+        // convert object to JSON string
+        testObject = JSON.stringify(testObject);
+
+        // Save String to localstorage
+        localStorage.setItem("promiseKey", testObject);
+
+
+        // --------------- Promise Example --------------------
+
+        function getData() {
+
+            // Create new Promise object
+            return new Promise( function(resolve, reject) {
+
+                // --- Logic of function: ---
+                
+                // get json and store in data variable
+                let data = localStorage.getItem("promisLKey");    
+                // convert data to javascript object
+                data = JSON.parse(data);
+                
+                // Reject case
+                if (!data) {
+                    return reject(new Error("Storage API error: data is empty or typo with key"));
+                }
+
+                // Resolve case
+                return resolve(data);
+            })
+        }
+
+
+        // --------------- Call Function -------------------
+
+        // function        // callback
+        getData().then(function(result) {
+
+            // Custom message for Resolve
+            console.log("Promise resolved!");
+            console.log(result);
+
+        }).catch(function(error) {
+
+            // Custom message for Error
+            console.log("Promise was rejected: ");
+            console.log(error);
+        });
+
+
+        /* --- Notes ---
+
+            - Use this example as template
+
+            - Mini Challenge:
+                There is a bug in the code, fix the business logic in getData() function,
+                to have Promise resolve instead reject.
+        
+        */
+
+    </script>
+
+</body>
+</html>
