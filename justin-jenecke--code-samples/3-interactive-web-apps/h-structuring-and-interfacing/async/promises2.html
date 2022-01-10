@@ -11,20 +11,12 @@
     <script>
         
         /*--------------------------------------------------
-            Basic Example 1
+            Basic Example 2
         --------------------------------------------------*/
 
-        // --------------- Setup Local Storage ---------------
+        // --------------- Setup ---------------
 
-        //create test object
-        let testObject = {delivery: true, type: "middle", cost: 3600};
-
-        // convert object to JSON string
-        testObject = JSON.stringify(testObject);
-
-        // Save String to localstorage
-        localStorage.setItem("promiseKey", testObject);
-
+        let option;
 
         // --------------- Promise Example --------------------
 
@@ -33,20 +25,16 @@
             // Create new Promise object
             return new Promise( function(resolve, reject) {
 
-                // --- Logic of function: ---
-                
-                // get json and store in data variable
-                let data = localStorage.getItem("promisLKey");    
-                // convert data to javascript object
-                data = JSON.parse(data);
+                // Application Logic
+                option = false;
                 
                 // Reject case
-                if (!data) {
-                    return reject(new Error("Storage API error: data is empty or typo with key"));
+                if (!option) {
+                    return reject(new Error("False"));
                 }
 
                 // Resolve case
-                return resolve(data);
+                return resolve("True");
             })
         }
 
