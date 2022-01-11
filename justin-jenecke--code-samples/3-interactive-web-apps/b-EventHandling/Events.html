@@ -64,12 +64,13 @@
 
             let car = { drivetrain: "rwd", color: "Black", year: 1992 }
 
-            document.addEventListener("click", function(e) {
+            /*document.addEventListener("click", function(e) {
 
+                // Inserting Html into the DOM
                 console.log(e.target);
-                e.target.innerHTML += `<p> Hello World </p>`;
+                e.target.innerHTML += "hello world";
 
-            });
+            });*/
 
             //get div Element
             let divider = document.getElementById('div');
@@ -107,14 +108,16 @@
                 const input1 = document.getElementById('input1');
                 const input2 = document.getElementById('input2');
             
-                //console.log(input1.value);
-                //console.log(input2.value);
+                console.log(input1.value);
+                console.log(input2.value);
 
                 // Creating Elements
                 let item = document.createElement("li")
 
                 //  create Language Button
                 let lang = document.createElement("button")
+
+                // set lang btn class == language name
                 lang.classList = input1.value;
 
                 //create difficulty Button

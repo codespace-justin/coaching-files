@@ -1,5 +1,5 @@
 
-// example of tv as class
+// example of Car as class
 class Car {
 
     //Constructor
@@ -25,10 +25,12 @@ class Car {
     //Setters:
 
     set setModel(model) {
-        if (typeof model === 'string')
+        if (typeof model === 'string') {
             this._model = model;
-        else    
+        }
+        else{    
             console.log('Model must be a String');
+        }
     }
 
     //Ternary operator for setter : works the same as normal if statement
@@ -50,6 +52,17 @@ class Car {
             console.log('Cost must be a number');
     }
 
+    carDescription() {
+        return ` Car Description: ${this._model} | ${this._manufacturer} | ${this._year}`;
+    }
+
+    getAge() {
+        let tempDate = new Date();
+        tempDate = tempDate.getFullYear();
+
+        return tempDate - this._year;
+    }
+
 }//end of class
 
 
@@ -63,9 +76,13 @@ const person = {
 
 
 const myCar = new Car ('Fiesta', 'Ford', 2010, 100);
+//let otherCar = {model: "m3", manufacturer: "BMW", year: 2019, cost: 500}
 const car2 = new Car ('X16', 'Ford', 2018, 100);
 const car3 = new Car ('Focus', 'Ford', 2010, 100);
 const car4 = new Car ('Golf', 'VW', 2020, 100);
+
+car3.setModel = 800;
+
 
 
 const showRoom = [myCar, car2, car3, car4];
@@ -88,8 +105,7 @@ showRoom.forEach(car => {
             <span class ="carDiv">${car.getModel}</span>
             <span class ="carDiv">${car.getYear}</span>
             <span class ="carDiv">${car.getCost}</span>
-            <span class ="carDiv">${car.getManufacturer}</span>
-            
+            <span class ="carDiv">${car.getManufacturer}</span>      
         </div>`
 
 });

@@ -42,13 +42,13 @@
 
             class Car {
 
-                constructor (varName, varBrand, varPrice, varYear, key) {
+                constructor (varName, varBrand, varPrice) {
 
                     this._name = varName,
                     this._brand = varBrand,
                     this._price = varPrice;
-                    this._year = year;
-                    this._key = key;
+                   // this._year = year;
+                  //  this._key = key;
                 }
 
                 getAttr() {
@@ -145,8 +145,13 @@
                     x = JSON.parse(x);
                     //cars.push(x);   
 
+                    let gh = "justin"
+
+                    let y = 25
+
+
                     //entrypoint.innerHTML = "<li>" + x._name + x._brand + x._price + "</li>";
-                    entrypoint.innerHTML += `<li>${x._name} ${x._brand} ${x._price}</li>`
+                    entrypoint.innerHTML += `<li class="item">${x._name} <button>Template String Button</button>  ${x._brand} ${x._price}</li>`
 
                 }
             }
