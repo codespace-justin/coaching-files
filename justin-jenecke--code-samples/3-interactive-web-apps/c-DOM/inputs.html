@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM - Inputs</title>
+    </head>
+
+    <body>
+        
+        <h3>Date Example</h3>
+        <input type="date" id="date">
+        <input type="submit" id="submit">
+    
+        <hr>
+    
+        <script>
+    
+            const submit = document.getElementById("submit");
+    
+    
+            submit.onclick = (e) => {
+    
+                let date = document.getElementById("date").value;
+                let localDate = new Date(date);
+    
+                console.log(localDate);
+    
+            }
+    
+        </script>
+
+    </body>
+</html>
