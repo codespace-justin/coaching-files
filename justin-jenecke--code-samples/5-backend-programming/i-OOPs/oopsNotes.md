@@ -31,7 +31,8 @@ Classes - Blueprints or templates for creating objects. They essentially dictate
 
 ## 2. Classes
 
-<ul>Main functions for classes are as mentioned earlier:</ul>
+
+#### <ul>Main functions for classes are as mentioned earlier:</ul>
     
     * Model real world objects into code (eg: House, Car, Person, etc.)
 
@@ -39,13 +40,39 @@ Classes - Blueprints or templates for creating objects. They essentially dictate
 
     * And the also control how objects behave (Methods/functionality). Methods are simply functions that are inside the scope of a class
 
-<ul>Using the example of a User in a syste, lets look at these 2 main points:</ul>
+
+
+#### <ul>Using the example of a User in a syste, lets look at these 2 main points:</ul>
     
     * An example property could be usersname, password, id number, department, etc.
 
     * Methods could be the functionality to log in to the system, view ther profile, change their passsword, etc.
 
-<ul>Basic Example:</ul>
+    * You can use these 2 functions to either return all the properties of a class, or the methods of a class.
+        - get_class_vars("ClassName");
+        - get_class_methods("ClassName");
+
+#### <ul>THIS keyword</ul>
+
+    * Special keyword used to refer to properties inside each individual instance of a Class (Object).
+
+    * $this keyword example use: 
+
+        class EgObject {
+        
+            public $name = "Coder";
+        
+            public function sayName() {
+                return $this-> name;
+            }
+        }
+        
+        $object = new EgObject();
+
+        echo $object->sayName(); # Output: Coder.
+
+
+#### <ul>Basic Example:</ul>
 
     class UserExample {
 
@@ -74,3 +101,26 @@ Classes - Blueprints or templates for creating objects. They essentially dictate
 <br>
 
 ## 3. Objects
+
+#### What are objects?
+
+    * An object is known as an instance of a Class
+
+    * They are created using the new keyword, followed by the classs name, and finally parenthesis ().
+        eg: new Object();
+
+    * You can select properties of a value directly using the -> notation
+        eg: $object-> username; # Will return value defined in Class
+
+#### Constructor
+
+    * A constructor is a method that is built into classes, and is called anytime a class in instantiated (object is made).
+
+    * When calling a constructor the arguements or parameters are injected inside obhect using the parenthesis
+        eg: new UserExample("coder777", "sult0n!M#n9o!", "IT Department", 0);
+
+    * Normally used in conjuntion with private properties, with constructor being used to set the values of the properties during instantiation.
+
+<br>
+<hr>
+<br>

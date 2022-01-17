@@ -1,13 +1,27 @@
 <?php
 
-    class UserExample {
+    class UserConstructorExample {
 
         # ----- Properties ----- #
 
-        public $username = "blake5660";
-        public $password = "1234abcd!";
-        public $department = "Human Resources";
-        public $hoursWorked = 32;
+        # Leave all properties undefined
+        public $username;
+        public $password;
+        public $department;
+        public $hoursWorked;
+
+        # ----- Constructor ----- #
+
+        # Parameters/arguements have function scope and have no reference to properties of class
+        # Their values are passed into properties when instantiating objects
+        public function __construct($username, $password, $department, $hoursWorked) {
+
+            $this->username = $username;
+            $this->password = $password;
+            $this->department = $department;
+            $this->hoursWorked = $hoursWorked;
+
+        }
 
         # ----- Methods ----- #
 
@@ -35,23 +49,23 @@
         }
     }
 
-    # Instantiate a new UserExample object.
-    $user1 = new UserExample();
+    # Create 2 Objects and assign their properties at runtime
+    $user1 = new UserConstructorExample("blake5660", "1234abcd", "Human Resources", 32);
+    $user2 = new UserConstructorExample("Jojo", "p@ss!", "Administration", 8);
 
-    # Testing workFullDay() Method
-    $user1->workFullDay();
-    echo $user1->hoursWorked;
+    $user2->workFullDay();
+    echo $user2->hoursWorked;
 
     #line break
     echo "<br><br>"; 
 
-    # Change the password
     $user1-> changePassword("h@llo0Wor!d;");
 
     #line break
     echo "<br><br>"; 
 
-    # Test viewProfile() method
     echo $user1-> viewProfile();
+    echo "<br><br>";#line break 
+    echo $user2-> viewProfile();
 
 ?>
