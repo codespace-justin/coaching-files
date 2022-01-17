@@ -45,28 +45,32 @@ Classes - Blueprints or templates for creating objects. They essentially dictate
 
     * Methods could be the functionality to log in to the system, view ther profile, change their passsword, etc.
 
-<ul>Example:</ul>
+<ul>Basic Example:</ul>
 
-    class User {
+    class UserExample {
 
-        # Properties
+        # ----- Properties ----- #
+
         public $username = "blake5660";
-        public $password = 1234abcd!;
+        public $password = "1234abcd!";
         public $department = "Human Resources";
         public $hoursWorked = 32;
 
-        # Methods
+        # ----- Methods ----- #
+
+        # Adds 8 hours to $hoursWorked
         public function workFullDay() {
             $this->hoursWorked += 8;
         }
 
-        public function changePassword($newPass) {
-
-            $this->password = $newPass
-        }
-
         public function viewProfile() {
-            return $this->username . " + " $this->password . " + " $this->id . " + " $this->department;
-        }
 
+            return  $this->username . " - " . $this->password . " - " . $this->hoursWorked . " - " . $this->department;
+        }
     }
+
+<br>
+<hr>
+<br>
+
+## 3. Objects
