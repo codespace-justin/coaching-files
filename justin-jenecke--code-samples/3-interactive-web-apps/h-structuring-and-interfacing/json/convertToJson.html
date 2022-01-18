@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript to JSON</title>
 </head>
+
 <body>
 
     <h1>JavaScript to JSON Conversion</h1>
@@ -13,25 +15,25 @@
     <script>
 
         // Create language object:
-        let language = {name: "JavaScript", difficulty: "easy", use: "client"};
-
+        let language1 = {name: "JavaScript", difficulty: "easy", use: "client"};
+        
         // print out language as javascript:
         // in order to display objects you need to destructure them
-        document.body.innerHTML += language.name;
-        document.body.innerHTML += language.difficulty;
-        document.body.innerHTML += language.use;
+        document.body.innerHTML += language1.name;
+        document.body.innerHTML += language1.difficulty;
+        document.body.innerHTML += language1.use;
 
         // Adding breaks to body tag
         document.body.innerHTML += `<br><hr><br>`;
 
         // Convert language to JSON:
-        language = JSON.stringify(language);
+        language1 = JSON.stringify(language1);
 
         // print out language as json:
-        document.body.innerHTML += language;
-
+        document.body.innerHTML += language1;
 
     </script>
 
 </body>
+
 </html>

@@ -22,7 +22,6 @@
             $this->hoursWorked = $hoursWorked;
 
         }
-
         # ----- Methods ----- #
 
         # Adds 8 hours to $hoursWorked
@@ -33,10 +32,9 @@
         # Allows User to set new Password
         public function changePassword($newPass) {
             
-            echo "Previous password: " . $this-> password . "<br>";
             # Change password
             $this->password = $newPass;
-            echo "Your new password: " . $this-> password . "<br><br>";
+            //echo "Your new password: " . $this-> password . "<br><br>";
         }
 
         # ViewProfile method return all properties or current state of object
