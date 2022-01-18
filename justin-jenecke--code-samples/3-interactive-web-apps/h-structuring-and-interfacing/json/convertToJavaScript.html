@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript to JSON</title>
+</head>
+<body>
+
+    <h1>JavaScript to JSON Conversion</h1>
+
+    <script>
+
+        // Create language object:
+        let language = '{ ' + 
+                       '"name":"javascript" ,' + 
+                       '"difficulty":"easy" ,' +
+                       '"use":"client"' + 
+                       '}';
+
+        // print out language as json:
+        document.body.innerHTML += language;
+
+        // Adding breaks to body tag
+        document.body.innerHTML += `<br><hr><br>`;
+
+        // Convert language to JavaScript so we can use the props in our app:
+        let languageJs = JSON.parse(language);
+
+        // print out language as javascript:
+        // in order to display objects you need to destructure them
+        document.body.innerHTML += languageJs.name + " ";
+        document.body.innerHTML += languageJs.difficulty + " ";
+        document.body.innerHTML += languageJs.use;
+
+
+    </script>
+
+</body>
+</html>

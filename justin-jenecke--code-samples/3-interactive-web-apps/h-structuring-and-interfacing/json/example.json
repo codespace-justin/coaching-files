@@ -1,29 +1,30 @@
-    [
-        {
-            "_name":"sentra",
-            "_brand":"nissan",
-            "_price":"30"},
-
-        {
-                "_name":"sentra",
-                "_brand":"nissan",
-                "_price":"30"},
-
-            {
-                "_name":"sentra",
-                "_brand":"nissan",
-                "_price":"30"},
-
-            {
-                "_name":"sentra",
-                "_brand":"nissan",
-                "_price":"30"},
-
-            {"_name":"sentra",
-                "_brand":"nissan",
-                "_price":"30"},
-
-            {"_name":"sentra",
-                "_brand":"nissan",
-                "_price":"30"}
-        ]
+[
+    {
+        "_name":"sentra",
+        "_brand":"nissan",
+        "_price":"30"
+    },
+    {
+        "_name":"corrola",
+        "_brand":"toyota",
+        "_price":"30"
+    },
+    {
+        "_name":"a3",
+        "_brand":"Audi",
+        "_price":"130"
+    },
+    {
+        "_name":"golf",
+        "_brand":"Volkswagon",
+        "_price":"100"
+    },
+    {"_name":"focus",
+        "_brand":"nissan",
+        "_price":"120"
+    },
+    {"_name":"corsa",
+        "_brand":"opel",
+        "_price":"70"
+    }
+]
