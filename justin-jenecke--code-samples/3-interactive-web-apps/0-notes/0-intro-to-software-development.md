@@ -16,6 +16,7 @@ and using those building blocks to build software solutions that solve a problem
 - input 
 - process
 - output
+
 - Maybe have students include comments to denotate when they are doing what for the first few challenges?
 
 #### Layout of Applications

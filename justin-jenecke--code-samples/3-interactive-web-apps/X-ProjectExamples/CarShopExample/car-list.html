@@ -42,15 +42,15 @@
 
             class Car {
 
-                constructor (varName, varBrand, varPrice) {
+                constructor (varName, varBrand, varPrice, stock) {
 
                     this._name = varName,
                     this._brand = varBrand,
                     this._price = varPrice;
-                   // this._year = year;
-                  //  this._key = key;
+                    this.stock = stock;
+                
                 }
-
+                
                 getAttr() {
                     return this._name + this._brand + this._price;
                 }
@@ -65,15 +65,35 @@
                         return car2._name + " is more expensive than " + car1._name;
                     }
                 }
+
+                addToStock(number) {
+
+                    if (this.stock === undefined) {
+                        
+                        this.stock = 0;
+                        
+                        this.stock += number;
+                        return this.stock;
+                        
+                    } else {
+                        
+                        this.stock += number;
+                        return this.stock;
+                    }
+                }
             }
 
         /* --- Array to store objects --- */
 
-            console.log("I made this changes");
-            let cars = [];
+            const yourCar = {name: "SW20", brand: "Toyota", cost:100, stock: 0};  // Object Literal
 
-            const myCar = new Car("SW20", "Toyota", "100", "sdhfdjh");
+            const myCar = new Car("Corolla", "Toyota",100);  // Class-Based Object
+            const myCar1 = new Car("Civic", "Honda",120);  // Class-Based Object
+            const myCar2 = new Car("Sentra", "Nissa",120);  // Class-Based Object
+            const myCar3 = new Car("Corsa", "Opel",120);  // Class-Based Object
 
+            const myCar4 = new Car("Corsa", "Opel",120, 5);  // Class-Based Object
+            
         /* --- Variables --- */
 
             //getting references to input fields
