@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Objects</title>
+</head>
+
+<body>
+
+    <h2>Student List</h2>
+
+    <ul id="studentList">
+
+    </ul>
+
+
+    <script>
+
+        /*------------------------------------------------
+
+            App Setup
+
+        ------------------------------------------------*/
+
+        let student1 = { studNo: 22186548, name: "Justin", department: "Information Technology", course: "Application Development" }
+        let student2 = { studNo: 22013774, name: "Adam", department: "Information Technology", course: "Multimedia" }
+      
+        /*------------------------------------------------
+
+            Display Object in DOM by seperating its properties
+
+        ------------------------------------------------*/
+
+        // Try to display whole object in DOM
+        // Doesnt work, reads as object since HTML cannot break down logic/variables, only strings
+        document.body.innerHTML += `       
+            <li>
+                <b>Element Created by referencing whole object: </b>
+                <span>${student1}</span>
+            </li>
+        `        
+
+        // Destructure object to display properties in DOM
+        // Works because properties are referenced individually
+        document.body.innerHTML += `       
+
+            <li> 
+                <b>Element Created using properties: </b>
+                <span>${student1.studNo}</span> -
+                <span>${student1.name}</span> -
+                <span>${student1.department}</span> - 
+                <span>${student1.course}</span> 
+            </li> 
+        
+        `;
+
+        /*------------------------------------------------
+
+            Display Object in DOM by storing its properties in variables
+
+        ------------------------------------------------*/
+
+        // Destructure object to store properties as variables:
+        let studentNumber = student2.studNo;
+        let studentName = student2.name;
+        let studentDepartment = student2.department;
+        let studentCourse = student2.course;
+
+        // Then display in DOM:
+        document.body.innerHTML += `   
+
+            <li> 
+                <b>Element Created using variables: </b>
+                <span>${studentNumber}</span> -
+                <span>${studentName}</span> -
+                <span>${studentDepartment}</span> - 
+                <span>${studentCourse}</span> 
+            </li> 
+
+            `;
+
+        /*
+            // ----- Notes ----- //
+        
+            The backtick used here are know as Template Strings, and used in building web components,
+            frameworks, and template engines to inject whole chunks of components/data into a web site/app/etc.
+
+            Can be used to inject JavaScript variables as Strings, and inject HTML into the DOM, all one one line
+
+            Can also be used in conjunction with functions to create your own modular web components
+
+        */
+
+    </script>
+
+</body>
+
+</html>
