@@ -7,70 +7,7 @@
 
 ## ----------------------------------------------------------------------------------------------------------------------------------
 
-## Core Programming Concepts
-
-## Variables: 
-
-    - Buckets/Boxes/Placeholders for holding information or data, and they consist of 2 parts. The variable itself, and the data stored
-      inside the variable
-
-    - A variable is decalared with a name, and by default is given the value of undefined.
-    - let x;
-    //console.log(x) will return undefined
-
-
-    - assignment or setting a variable is done using the = sign
-    - this is used to assign the variable a value
-    - let x = 10;
-    //console.log(x) will return 10
-
-
-    - In JavaScript you also get 2 types of variables: Namely *let and *const
-
-    - Let behaves like the word variable dictates, its value can change and be manipulated, and cannot be trusted to stay constant.
-        * eg: someone's age, speed a car is traveling, the current exchange rate, etc. 
-
-    - Const is the complete opposite, hence the name const, and is used to store variables or data that will never change
-        * eg: HTML components, functions, unique ID numbers, etc. 
-
-<hr><br>
-
-## Data Types: 
-
-    *Number* : normal numbers ( 10, 552, 7 )
-
-    *String* : letters, words, characters ( 'Hello World', "Justin" )
-
-    *Boolean*: true or false
-
-    *Null* : means that a variable has been declared with an empty value
-
-    *Undefined* : means that a variable has not been declared or no value has been set
-
-    *Object* : a variable that has other variables as properties
-
-#### Note:
-
-    - You also get a special String in JavaScript known as a 'Template String'
-
-    - Template Strings are used together with normal Strings to inject other variables or objects into the String
-    - They were introduced with ES6
-    - They are by using `backticks` instead 'single' or "double" quotes
-    - Can be used to inject HTML inside a String as well
-    - JavaScript variables are denotated with: ${var}
-    - Typical uses cases include:
-        * dynamically creating a new HTML Element using JavaScript
-        * dynamically injecting a name into a custom greeting message
-        * Populating HTML elements such as an <ul> with variables stored in an array
-
-
-Code Example: 
-    
-    // JS Variable
-    let testText = "Hello World";
-
-    // Template String
-    document.body.innerHTML += `<div class="container" id="test"> This is a test for <i>Template Strings</i> : ${testText} </div>`;
+;
 
 <hr><br>
 
