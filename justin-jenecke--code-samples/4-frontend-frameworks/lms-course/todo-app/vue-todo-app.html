@@ -10,8 +10,9 @@
         <style>
             .strike {
                 text-decoration: line-through;
-                color: #efefef;
+                color: #9c0606;
             }
+            
         </style>
 
     </head>
@@ -19,9 +20,10 @@
     <body>
 
         <div id="myVueItem">
-        <!--             
-            <button @click='printTitle'>Test</button>
-        -->
+            
+            <!--             
+                <button @click='printTitle'>Test</button>
+            -->
 
             <!-- Titlw -->
             <h1>{{title}}</h1>
@@ -48,6 +50,10 @@
 
         </div>
 
+        <div id="testComponet">
+
+        </div>
+
 <!-- End of Markup -->
 
         <script>
@@ -55,23 +61,24 @@
             let component1 = new Vue({
                 el : '#myVueItem',
                 data : {
+ 
                     title : 'Vue Todo App',
                     text : 'Add an Item to the list:',
                     newItem : "",
                     visible : true,
                     items : [
-                            {
-                                todo : "toothbrush",
-                                done : true
-                            },
-                            {
-                                todo : "toothpaste",
-                                done : false
-                            },
-                            {
-                                todo : "dental floss",
-                                done : false
-                            }
+                                {
+                                    todo : "toothbrush",
+                                    done : true
+                                },
+                                {
+                                    todo : "toothpaste",
+                                    done : false
+                                },
+                                {
+                                    todo : "dental floss",
+                                    done : false
+                                }
                             ],
                     STATE: false
                 },
