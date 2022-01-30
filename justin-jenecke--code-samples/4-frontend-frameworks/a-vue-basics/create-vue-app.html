@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Vue Basics</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Container element as physical View or Template -->
+    <main id="app">
+
+        <h1> Student List App </h1>
+
+        <!-- Use this div to destructure course object property -->
+        <div id="cohortInfo" style="display: flex; justify-content: space-evenly;">
+
+           <h3>Course Name: {{course.name}} </h3>
+           <h3> Course Id: {{course.id}} </h3>
+           <h3> Free Course: {{course.free}} </h3>
+            
+        </div>
+
+        <h2>Student List</h2>
+        <!-- 
+            Basic loop deriective 
+            v-for is a directive or shortcut to preform a forEach loop
+            You write the html template once, and vue repeats that for each variable in the array
+        -->
+        <ul id="studentList">
+            <li v-for="student in studentList">
+                {{student}}
+            </li>
+        </ul>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

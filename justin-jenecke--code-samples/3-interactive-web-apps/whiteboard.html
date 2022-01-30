@@ -1,36 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>IWE-Whitenboard</title>
-    </head>
-     
-    <!-- Start HTML Document Body -->
-    <body>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IWA-Whitenboard</title>
 
-        <!-- Start of JavaScript -->
-        <script>
+</head>
 
-            let person1 = {
+<!-- Start HTML Document Body -->
 
-            name : "Justin",
-            employed : true,     //State or Variables as properties
-            job : "Code Coach",
-            telNo : 15, 
+<body>
 
-            fullTitle : function() { 
-                console.log(name + job)
-                }
-            }
+    <!-- Start of Javascript -->
+    <script>
 
-        </script>
-        <!-- End of JavaScript -->
+        /*
+        * Author: Justin Jenecke
+        * Module: Flow and Control 
+        * Chapter: If Statements 
+        * App: High School Grade Determining App
+        */
 
-    </body>
-    <!-- End of HTML Document Body -->
+        console.log("App to determine what group you usually are at a certain age");
+
+        // create age variable
+      //  let ageInput = prompt("Please Input an age:");
+
+        let age = 16;
+
+        switch(age) {
+
+            case 14: 
+                console.log("You should be in the 8th Grade");
+                break;
+
+            case 15: 
+                console.log("You should be in the 9th Grade");
+                break;
+
+            case 16 : 
+                console.log("You should be in the 10th Grade");
+                break;
+
+            case 17 : 
+                console.log("You should be in the 11th Grade");
+                break;
+
+            case 18 : 
+                console.log("You should be in Matric by " + age + " years old.");
+                break;
+
+            default :
+                console.log("You are either too young, or too old for High School");
+
+        }
+
+    </script>
+</body>
+<!-- End of HTML Document Body -->
 
 </html>
