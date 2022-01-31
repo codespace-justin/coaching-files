@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue"></script>
-    <title>Vue Basics</title>
+    <title>Vue Directives</title>
     <style>
-
         #header {
             margin-top: 0;
             padding-top: 0.5rem;
@@ -32,7 +31,7 @@
             <h1> {{title}} </h1>
 
             <h4>Welcome to the student list</h4>
-            <textarea cols="60" rows="10" placeholder="text here.."></textarea>    
+            <textarea cols="60" rows="10" placeholder="text here.." v-model="scratchBoardText"></textarea>    
 
         </header>
 
@@ -46,14 +45,19 @@
         </div>
 
         <h2>Student List</h2>
-
-        <ul id="studentList">
-      
+        <!-- 
+            Basic loop deriective 
+            v-for is a directive or shortcut to preform a forEach loop
+            You write the html template once, and vue repeats that for each variable in the array
+        -->
+        <ul v-if="showCourseInfo" id="studentList">
+            <li v-for="student in studentList" v-on:click="">
+                {{student}}
+            </li>
         </ul>
 
     </main>
 
-    <!-- setup link to script containing vue instance -->
     <script src="app.js"></script>
 
 </body>
