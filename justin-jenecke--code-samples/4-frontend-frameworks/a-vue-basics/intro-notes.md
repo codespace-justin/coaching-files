@@ -32,7 +32,7 @@ With Vue your still using a browser and the DOM, but instead referencing the who
 
 7. Finally create a Vue instance by creating a new Vue object literal, name it similar to the filename and assign it = new Vue()
 
-8. Open curly braces inside the objects arguements, give  it1 property with a key of 'el' and assign it the value of your        container elements id.
+8. Open curly braces inside the objects arguements, give it 1 property with a key of 'el' and assign it the value of your        container elements id.
 
 9. Dont forget to use # and quotes as you must use css selector
 

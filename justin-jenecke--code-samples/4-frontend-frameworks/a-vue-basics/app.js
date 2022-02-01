@@ -11,7 +11,9 @@ const mainApp = new Vue({
         // data types:
 
         // String
-        title : "Student List App",
+        title : "Student list App",
+
+        subTitle : "This app displays a list of students registered for this course. Please use the textarea below to add any comments/remarks",
         
         // Array
         studentList : [
@@ -34,6 +36,11 @@ const mainApp = new Vue({
             //boolean
             free : false
         }
+    },
+    methods : {
+        
+
+
     }
 
 })

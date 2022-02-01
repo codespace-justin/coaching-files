@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue@next"></script>
     <title>Vue Directives</title>
     <style>
         #header {
@@ -30,7 +30,7 @@
 
             <h1> {{title}} </h1>
 
-            <h4>Welcome to the student list</h4>
+            <h4>{{subTitle}}</h4>
             <textarea cols="60" rows="10" placeholder="text here.." v-model="scratchBoardText"></textarea>    
 
         </header>
@@ -52,7 +52,9 @@
         -->
         <ul v-if="showCourseInfo" id="studentList">
             <li v-for="student in studentList" v-on:click="">
-                {{student}}
+                Student:{{student}}
+                <button>Check-results</button>
+                <button>remove</button>
             </li>
         </ul>
 

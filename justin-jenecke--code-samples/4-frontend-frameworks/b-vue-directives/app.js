@@ -7,6 +7,8 @@ const mainApp = new Vue({
 
         title : "Student List App",
 
+        subTitle : "This app displays a list of students registered for this course. Please use the textarea below to add any comments/remarks",
+
         // array for v-for
         studentList : [
             "Lola Faulkner",
@@ -27,10 +29,18 @@ const mainApp = new Vue({
         },
 
         // v-model prop
-        scratchBoardText : " This property can be edited by the View..",
+        scratchBoardText : "",
 
         // v-if prop
-        showCourseInfo : true
+        showCourseInfo : false
+
+    },
+    methods : {
+
+        addToStudentList(name) {
+
+            this.studentList = this.studentList.push(name)
+        }
 
     }
 
