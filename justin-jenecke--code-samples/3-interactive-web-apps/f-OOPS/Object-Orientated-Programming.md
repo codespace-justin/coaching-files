@@ -31,7 +31,10 @@
 
     - There are 2 types of Objects
 
-    - An object is known as an instance of a class. (When you create a new object using a class as a blueprint).
+        - Class Based
+        - Object Literal
+
+    - An an object in oop is known as an instance of a class. (When you create a new object using a class as a blueprint).
     - Objects are initialized with the "new" keyword, and a constructor referencing the class.
     - Values are injected into the objects attributes by the order of the names given in the constructor.
     - Values provided to the constructor are specific to each individual objects Attributes.
