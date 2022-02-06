@@ -9,17 +9,61 @@ const mainApp = new Vue({
 
         subTitle : "This app displays a list of students registered for this course. Please use the textarea below to add any comments/remarks",
 
-        // array for v-for
+    // -- Updates for dynamic css class assigning
+    
+        /**
+         * For us to be able to manage the state of our students we need to first convert them into objects.
+         * This way we can track whether they still studying, or complete with their studies and in turn 
+         * dynamically apply a css rule to element the property is binded to.
+         * 
+         * There is an alternative way that we could achieve this dynamic styling by using mostly vanilla js and the DOM 
+         * api, but since we are using Vue it makes a lot more sense utilize its power, as opposed to sticking with what we
+         * already know.
+         *   
+         **/
+
         studentList : [
-            "Lola Faulkner",
-            "Vaughn Kirby",
-            "Oswaldo Meyers",
-            "Bruno Mcbride",
-            "Maia Reed",
-            "Nathanael Acosta",
-            "Brylee Hawkins",
-            "Corey Vance"
+            {
+                name : "Lola Faulkner",
+                studying : true
+            },
+            {
+                name : "Vaughn Kirby",
+                studying : true
+            },
+            {
+                name : "Oswaldo Meyers",
+                studying : true
+            },
+            {
+                name : "Bruno Mcbride",
+                studying : true
+            },
+            {
+                name : "Maia Reed",
+                studying : true
+            },
+            {
+                name : "Nathanael Acosta",
+                studying : true
+            },
+            {
+                name : "Brylee Hawkins",
+                studying : true
+            },
+            {
+                name : "Corey Vance",
+                studying : true
+            }
         ],
+
+        /**
+         *  remember, now that we have updated the properties in our Vue objects Model, we need update how we present 
+         *  and referenc them in our Vue objects View
+         */
+    
+
+    // Updates for dynamic css class assigning -- //
   
         course : {
             
@@ -28,18 +72,34 @@ const mainApp = new Vue({
             free : false
         },
 
-        // v-model prop
         scratchBoardText : "",
 
-        // v-if prop
-        showCourseInfo : false
+        showCourseInfo : true,
+
+        newStudent : ""
 
     },
     methods : {
 
-        addToStudentList(name) {
 
-            this.studentList = this.studentList.push(name)
+        addToStudentList(newName) {
+
+            let newStudent = {
+                name : newName,
+                studying : true
+            }
+
+            this.studentList.push(newStudent)
+        },
+
+        displayStudents() {
+            this.showCourseInfo = !this.showCourseInfo
+        },
+
+        // Code for dynamic class styling
+        modifyStudyingProp(student) {
+
+            student.studying = !student.studying
         }
 
     }
