@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Vue Directives</title>
+    <style>
+        #header {
+            margin-top: 0;
+            padding-top: 0.5rem;
+            background-color: rgb(82, 114, 145);
+            text-align: center;
+        }
+
+        #cohortInfo {
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Container element as physical View or Template -->
+    <main id="app">
+
+        <header id="header">
+
+            <h1> {{title}} </h1>
+
+            <h4>{{subTitle}}</h4>
+            <textarea cols="60" rows="10" placeholder="text here.." v-model="scratchBoardText"></textarea>    
+
+        </header>
+
+        <!-- Use this div to destructure course object property -->
+        <div id="cohortInfo" style="display: flex; justify-content: space-evenly;">
+
+           <h3>Course Name: {{course.name}} </h3>
+           <h3> Course Id: {{course.id}} </h3>
+           <h3> Free Course: {{course.free}} </h3>
+            
+        </div>
+
+        <h2>Student List</h2>
+        <!-- 
+            Basic loop deriective 
+            v-for is a directive or shortcut to preform a forEach loop
+            You write the html template once, and vue repeats that for each variable in the array
+        -->
+        <ul v-if="showCourseInfo" id="studentList">
+            <li v-for="student in studentList" v-on:click="">
+                Student:{{student}}
+                <button>Check-results</button>
+                <button>remove</button>
+            </li>
+        </ul>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
