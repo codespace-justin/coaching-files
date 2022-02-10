@@ -19,7 +19,7 @@ const mainApp = new Vue({
          * There is an alternative way that we could achieve this dynamic styling by using mostly vanilla js and the DOM 
          * api, but since we are using Vue it makes a lot more sense utilize its power, as opposed to sticking with what we
          * already know.
-         *   
+         * 
          **/
 
         studentList : [
@@ -101,6 +101,11 @@ const mainApp = new Vue({
 
             student.studying = !student.studying
         }
+
+    },
+    computed : {
+
+        fullCourseInfo : this.course.name + this.course.id + this.course.free
 
     }
 

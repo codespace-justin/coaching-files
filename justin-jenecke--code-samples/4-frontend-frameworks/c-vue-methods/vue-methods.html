@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue"></script>
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <title>Vue Methods</title>
     <style>
         #header {
@@ -55,15 +56,17 @@
         <button v-on:click="addToStudentList(newStudent)">Add Student</button>     
 
         <!-- onclick functionality to binf this button to displayStudents method -->
-        <button v-on:click="displayStudents">Show Students</button>   
+        <button v-on:click="displayStudents()">Show Students</button>   
 
     <!-- /New Code for methods example -->
         
         <ul v-if="showCourseInfo" id="studentList">
+
             <li v-for="student in studentList" v-on:click="">
                 Student:{{student}} -
                 <button>remove</button>
             </li>
+            
         </ul>
 
     </main>

@@ -32,7 +32,7 @@ const mainApp = new Vue({
         scratchBoardText : "",
 
         // v-if prop
-        showCourseInfo : false
+        showCourseInfo : true
 
     },
     methods : {
