@@ -1,13 +1,31 @@
-x = 10;
+/*---------------------------------------------------
+	Bubbling
+---------------------------------------------------*/
 
-// conditional
-while (x > 0) {
+const inner  = document.getElementById("innerElement");
+const middle  = document.getElementById("middleElement");
+const outer  = document.getElementById("outerElement");
 
-	// functionality
-	console.log(x)
+inner.onclick = () => {
+	
+	console.log("You clicked on the inner element")
 
-	//end statement
-	x--
 }
 
-console.log("end of loop, x is now " + x)
+
+/*
+middle.onclick = () => {
+	
+	console.log("You clicked on the middle element")
+
+}
+*/
+
+
+/*
+outer.onclick = () => {
+	
+	console.log("You clicked on the outer element")
+
+}
+*/

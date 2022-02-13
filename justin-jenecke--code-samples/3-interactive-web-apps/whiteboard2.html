@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whiteboard 2</title>
+</head>
+
+<body>
+
+<!-- 
+     Normal HTML, convention is to use id's as selectors in JavaScript and
+	 classes for styling in CSS
+    -->
+    <p>
+        lorem ipsum <br>
+
+        <button id="click-btn">
+            Click Me!
+        </button>
+
+    </p>
+
+    <script>
+
+        // Get reference to HTML element
+        const clickBtn = document.querySelector("#click-btn")
+
+       // use addEventListner method
+       // first arguement is event you want to listen to
+       // 2nd arguement is a callback function
+
+       clickBtn.addEventListener("click", () => {
+
+            alert("you clicked on the button, and handled the event using the evenListener function() and an ES6 Arrow Function")
+       })
+
+    </script>
+
+</body>
+
+</html>
